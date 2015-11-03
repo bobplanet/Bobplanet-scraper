@@ -1,3 +1,7 @@
+# Google DataStore에 데이터를 저장/조회하는 모듈
+# - REST API를 이용하므로 jsonlite 모듈을 이용해 JSON 객체를 data.frame과 상호변환함
+# - DataStore API의 결과값 포맷은 https://cloud.google.com/datastore/docs/apis/v1beta2/?hl=ko 참조
+
 library(httr)
 library(jsonlite)
 library(lubridate)
@@ -12,23 +16,18 @@ DATASTORE_QUERY <- 'https://www.googleapis.com/datastore/v1beta2/datasets/kr-bob
 
 TAG <- 'googleDataStore'
 
+# OAuth 토큰 생성
+# - 이 함수가 호출되면 브라우저가 열리면서 OAuth 인증을 수행하게 됨
+# - 최초 인증의 경우는 브라우저 안에 떠있는 인증번호를 R console에서도 입력해 주어야 함
+# - 한번 인증이 끝나면 .httr-oauth 파일에 관련 정보 캐싱
 .auth <- function() {
   server <- oauth_app('google', DATASTORE_API_KEY, DATASTORE_API_SECRET)
   token <- oauth2.0_token(oauth_endpoints('google'), server, scope = CLOUD_SCOPE)
   return(token)
 }
-
 token <- .auth()
 
-# transaction 시작
-.beginTransaction <- function() {
-  r <- POST(DATASTORE_TX, config(token = token), content_type_json())
-  stop_for_status(r)
-  tx <- content(r)$transaction
-  return(tx)
-}
-
-# 메뉴아이템 데이터 저장
+# 메뉴아이템(갈비탕, 육개장...) 데이터를 DataStore에 저장
 uploadItem <- function(item) {
   flog.info('%s$uploadItem() started.', TAG)
   if (NROW(item) == 0) {
@@ -44,7 +43,7 @@ uploadItem <- function(item) {
     ))
   )
 
-  # 트랜잭션 제한을 피하기 위해 20개 단위로 끊어서 저장
+  # 트랜잭션 제한을 피하기 위해 25개 단위로 끊어서 저장
   n <- NROW(upsert)
   ntx <- 25
   Map(.commit, split(upsert, cut(1:n, seq(from = 1, to = n + ntx, by = ntx), right = F)))
@@ -52,7 +51,7 @@ uploadItem <- function(item) {
   flog.info('%s$uploadItem() finished.', TAG)
 }
 
-# 메뉴 데이터 저장
+# 일간메뉴 데이터 저장
 uploadMenu <- function(menu) {
   flog.info('%s$uploadMenu() started.', TAG)
   
@@ -87,21 +86,32 @@ uploadMenu <- function(menu) {
   flog.info('%s$uploadMenu() finished.', TAG)
 }
 
-# 특정 종류의 객체 전체 리스트를 data.frame 형태로 받아온다
-dumpKind <- function(kind) {
-  body <- list(
-    query = list(
-      kinds = data.frame(name = unbox(kind))
+# DataStore에서 메뉴아이템 데이터를 받아 data.frame으로 변환
+dumpItem <- function() {
+  item <- .dumpKind('Item')
+
+  item %>% Map(function(row) {
+    entity <- row$entity
+    list(
+      name = entity$key$path[[1]]$name,
+      image = entity$properties$image$stringValue,
+      thumbnail = entity$properties$thumbnail$stringValue,
+      averageScore = entity$properties$averageScore$doubleValue,
+      numThumbUps = entity$properties$numThumbsUp$integerValue,
+      numThumbDowns = entity$properties$numThumbsDown$integerValue
     )
-  ) %>% toJSON
-  
-  r <- POST(DATASTORE_QUERY, body = body,
-            config(token = token), c(content_type_json()))
-  
-  content(r)$batch$entityResults
-  #fromJSON(content(r))
+  }, .)
 }
 
+# transaction 시작
+.beginTransaction <- function() {
+  r <- POST(DATASTORE_TX, config(token = token), content_type_json())
+  stop_for_status(r)
+  tx <- content(r)$transaction
+  return(tx)
+}
+
+# transaction commit
 .commit <- function(upsert) {
   tx <- .beginTransaction()
   
@@ -119,4 +129,18 @@ dumpKind <- function(kind) {
     stop_for_status(r)
     flog.error("Datastore commit error: %s", content(r))
   }
+}
+
+# 특정 kind의 데이터 조회
+.dumpKind <- function(kind) {
+  body <- list(
+    query = list(
+      kinds = data.frame(name = unbox(kind))
+    )
+  ) %>% toJSON
+  
+  r <- POST(DATASTORE_QUERY, body = body,
+            config(token = token), c(content_type_json(), verbose()))
+  
+  content(r)$batch$entityResults
 }

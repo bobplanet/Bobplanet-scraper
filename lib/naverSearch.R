@@ -1,3 +1,7 @@
+# 네이버 이미지 검색 API 모듈
+# - 더이상 사용하지 않음. 이유는 https://github.com/bobplanet/Bobplanet/issues/39 참조
+# - 스펙은 http://developer.naver.com/wiki/pages/SrchImage 참조
+
 library(rvest)
 
 NAVER_API_KEY <- Sys.getenv('NAVER_API_KEY')

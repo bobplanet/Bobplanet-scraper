@@ -11,7 +11,9 @@ suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(lubridate))
 suppressPackageStartupMessages(library(futile.logger))
 
-metadata <- loadModule('lib/metadata.R')
+source('env.R')
+
+metadata <- loadLib('lib/metadata.R')
 
 # 실행환경 초기화
 if (opt$init) {
@@ -21,9 +23,9 @@ if (opt$init) {
   quit()
 }
 
-pnetParser <- loadModule('lib/pnetParser.R')
-dataStore <- loadModule('lib/googleDataStore.R')
-daum <- loadModule('lib/daumSearch.R')
+pnetParser <- loadLib('lib/pnetParser.R')
+dataStore <- loadLib('lib/googleDataStore.R')
+daum <- loadLib('lib/daumSearch.R')
 
 # argument가 없을 경우 가장 가까운 미래의 일요일을 기준일로 한다
 sunday <- today() - wday(today()) + 8
