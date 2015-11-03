@@ -97,10 +97,10 @@ dumpItem <- function() {
       image = entity$properties$image$stringValue,
       thumbnail = entity$properties$thumbnail$stringValue,
       averageScore = entity$properties$averageScore$doubleValue,
-      numThumbUps = entity$properties$numThumbsUp$integerValue,
-      numThumbDowns = entity$properties$numThumbsDown$integerValue
-    )
-  }, .)
+      numThumbUps = entity$properties$numThumbUps$integerValue,
+      numThumbDowns = entity$properties$numThumbDowns$integerValue
+    ) %>% lapply(function(x) ifelse(is.null(x), NA, x))
+  }, .) %>% Reduce(bind_rows, .)
 }
 
 # transaction 시작
@@ -140,7 +140,7 @@ dumpItem <- function() {
   ) %>% toJSON
   
   r <- POST(DATASTORE_QUERY, body = body,
-            config(token = token), c(content_type_json(), verbose()))
+            config(token = token), c(content_type_json()))
   
   content(r)$batch$entityResults
 }
