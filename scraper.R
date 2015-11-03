@@ -1,3 +1,7 @@
+# P넷 홈페이지를 긁어서 서버 DataStore 및 local SQLite DB에 저장하는 스크립트
+# 매주 토요일 새벽 6시에 배치로 실행됨
+# - commandline option을 받기 위해 optparse 패키지 이용
+
 suppressPackageStartupMessages(library(optparse))
 
 # command line argument 처리
