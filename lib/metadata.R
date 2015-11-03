@@ -39,7 +39,7 @@ updateMenu <- function(menu, search) {
   newitem <- data.frame(title = titles) %>% anti_join(item %>% select(title), copy = T)
   
   # 이미지 추가
-  image <- Map(search$imageSearch, newitem$title) %>% Reduce(bind_rows, .)
+  image <- Map(function(title) { search$imageSearch(title, 1) }, newitem$title) %>% Reduce(bind_rows, .)
   newitem$image <- image$image
   newitem$thumbnail <- image$thumbnail
   
