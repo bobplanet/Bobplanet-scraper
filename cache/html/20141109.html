@@ -1,0 +1,1142 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	사내지원 원클릭
+</title>
+    <!-- IE10에서 IE7으로 실행되어서 디자인 코드를 추가함 -->
+	<meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8" />
+
+    <link href="/Common/css/default.css" rel="stylesheet" />
+    <link href="/Common/css/ko-kr/sub.css" rel="stylesheet" />
+
+    <script src="/Common/js/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="/Common/js/design.js"></script>
+    <!--[if lt IE 9]><script src="/Common/js/html5.js"></script><![endif]-->
+    <script src="/Common/js/Resource.js"></script>
+    <script src="/Common/js/select_Modified.js"></script>
+    <script src="/Common/js/ServicePortalMenu.js?_dt=20140220"></script>
+
+    <script type="text/javascript">
+        // 페이지별로 상대적인 루트 경로 값.
+        var g_PageResolvedRootUrl = "/";
+        var g_LangCode = "ko";
+
+        var nationalDays = eval('["2006-01-30","2006-03-01","2006-03-29","2006-05-01","2006-05-05","2006-05-31","2006-06-06","2006-07-17","2006-08-15","2006-10-03","2006-10-04","2006-10-05","2006-10-06","2006-12-25","2007-01-01","2007-02-19","2007-03-01","2007-03-29","2007-05-01","2007-05-24","2007-06-06","2007-07-17","2007-08-15","2007-09-24","2007-09-25","2007-09-26","2007-10-03","2007-12-19","2007-12-25","2008-01-01","2008-02-06","2008-02-07","2008-02-08","2008-04-09","2008-05-01","2008-05-05","2008-05-12","2008-06-06","2008-08-15","2008-09-15","2008-10-03","2008-12-25","2009-01-01","2009-01-26","2009-01-27","2009-05-01","2009-05-05","2009-10-02","2009-12-25","2010-01-01","2010-02-15","2010-03-01","2010-03-29","2010-05-05","2010-05-21","2010-06-02","2010-09-21","2010-09-22","2010-09-23","2011-02-02","2011-02-03","2011-02-04","2011-03-01","2011-03-29","2011-05-05","2011-05-10","2011-06-06","2011-08-15","2011-09-12","2011-09-13","2011-10-03","2012-01-23","2012-01-24","2012-03-01","2012-03-29","2012-05-01","2012-05-28","2012-06-06","2012-08-15","2012-10-01","2012-10-03","2012-12-25","2013-01-01","2013-02-11","2013-03-01","2013-03-29","2013-05-01","2013-05-17","2013-06-06","2013-08-15","2013-09-18","2013-09-19","2013-09-20","2013-10-03","2013-12-25","2014-01-01","2014-01-30","2014-01-31","2014-05-01","2014-05-05","2014-05-06","2014-06-06","2014-08-15","2014-09-08","2014-09-09","2014-10-03","2014-12-25","2015-02-20","2015-02-19","2015-02-18","2015-10-09","2015-12-25","2016-01-01","2016-02-08","2016-02-09","2016-03-01","2016-05-05","2016-06-06","2016-08-15","2016-09-14","2016-09-15","2016-09-16","2016-10-03","2015-05-25","2015-05-05","2015-08-14","2015-09-29","2015-09-28","2015-01-01","2015-01-30",]');
+        $(document).ready(function () {
+            ServicePortalMenu.init();
+        });
+    </script>
+    
+    <link href="../../Common/css/jquery-ui-1.10.3.css" rel="stylesheet" />
+    <script src="../../Common/js/jquery-ui-1.10.3.js"></script>
+    <script src="../../Common/js/select.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var BreakFastListJson = [{"MenuFoodList":[{"CfFoodID":12443,"CfFood_Name":"쌀밥","CfFood_Origin":"쌀 국내산","CfMenuID":1292},{"CfFoodID":12444,"CfFood_Name":"계란후라이","CfFood_Origin":"","CfMenuID":1292},{"CfFoodID":12445,"CfFood_Name":"쥐어채볶음","CfFood_Origin":"","CfMenuID":1292},{"CfFoodID":12446,"CfFood_Name":"구운김","CfFood_Origin":"","CfMenuID":1292},{"CfFoodID":12447,"CfFood_Name":"포기김치","CfFood_Origin":"김치 국내산","CfMenuID":1292},{"CfFoodID":12448,"CfFood_Name":"토스트&커피&숭늉","CfFood_Origin":"","CfMenuID":1292}],"MenuAttachInfo":null,"CfMenuID":1292,"CfMenu_Date":new Date(1415545200000),"CfMeal_Gubun":"1","CfMenu_Type":"1","CfMenu_Name":"","CfMenu_Food":"북어국","CfMenu_Origin":"황태채 러시아산","CfMenu_KCal":0,"CfFileID":0,"TempYN":"N"},{"MenuFoodList":[{"CfFoodID":12467,"CfFood_Name":"쌀밥","CfFood_Origin":"쌀 국내산","CfMenuID":1296},{"CfFoodID":12468,"CfFood_Name":"스크램블드에그","CfFood_Origin":"","CfMenuID":1296},{"CfFoodID":12469,"CfFood_Name":"마늘쫑볶음","CfFood_Origin":"","CfMenuID":1296},{"CfFoodID":12470,"CfFood_Name":"오이지","CfFood_Origin":"","CfMenuID":1296},{"CfFoodID":12471,"CfFood_Name":"깍두기","CfFood_Origin":"김치 국내산","CfMenuID":1296},{"CfFoodID":12472,"CfFood_Name":"토스트&커피&숭늉","CfFood_Origin":"","CfMenuID":1296}],"MenuAttachInfo":null,"CfMenuID":1296,"CfMenu_Date":new Date(1415631600000),"CfMeal_Gubun":"1","CfMenu_Type":"1","CfMenu_Name":"","CfMenu_Food":"오징어무국","CfMenu_Origin":"오징어 국내산","CfMenu_KCal":0,"CfFileID":0,"TempYN":"N"},{"MenuFoodList":[{"CfFoodID":12490,"CfFood_Name":"흑미밥","CfFood_Origin":"","CfMenuID":1300},{"CfFoodID":12491,"CfFood_Name":"두부구이","CfFood_Origin":"","CfMenuID":1300},{"CfFoodID":12492,"CfFood_Name":"김치볶음","CfFood_Origin":"김치 국내산","CfMenuID":1300},{"CfFoodID":12493,"CfFood_Name":"깻잎지","CfFood_Origin":"","CfMenuID":1300},{"CfFoodID":12494,"CfFood_Name":"포기김치","CfFood_Origin":"김치 국내산","CfMenuID":1300},{"CfFoodID":12495,"CfFood_Name":"토스트&커피?&숭늉","CfFood_Origin":"","CfMenuID":1300},{"CfFoodID":12536,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1300},{"CfFoodID":12537,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1300},{"CfFoodID":12538,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1300},{"CfFoodID":12539,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1300},{"CfFoodID":12540,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1300},{"CfFoodID":12541,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1300},{"CfFoodID":12542,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1300},{"CfFoodID":12543,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1300}],"MenuAttachInfo":null,"CfMenuID":1300,"CfMenu_Date":new Date(1415718000000),"CfMeal_Gubun":"1","CfMenu_Type":"1","CfMenu_Name":"","CfMenu_Food":"아욱국","CfMenu_Origin":"","CfMenu_KCal":0,"CfFileID":0,"TempYN":"N"},{"MenuFoodList":[{"CfFoodID":12513,"CfFood_Name":"쌀밥","CfFood_Origin":"쌀 국내산","CfMenuID":1304},{"CfFoodID":12514,"CfFood_Name":"계란후라이","CfFood_Origin":"","CfMenuID":1304},{"CfFoodID":12515,"CfFood_Name":"멸치볶음","CfFood_Origin":"","CfMenuID":1304},{"CfFoodID":12516,"CfFood_Name":"무생채","CfFood_Origin":"","CfMenuID":1304},{"CfFoodID":12517,"CfFood_Name":"포기김치","CfFood_Origin":"김치 국내산","CfMenuID":1304},{"CfFoodID":12518,"CfFood_Name":"토스트&커피&숭늉","CfFood_Origin":"","CfMenuID":1304}],"MenuAttachInfo":null,"CfMenuID":1304,"CfMenu_Date":new Date(1415804400000),"CfMeal_Gubun":"1","CfMenu_Type":"1","CfMenu_Name":"","CfMenu_Food":"소고기미역국","CfMenu_Origin":"우육 호주산","CfMenu_KCal":0,"CfFileID":0,"TempYN":"N"},{"MenuFoodList":[{"CfFoodID":12569,"CfFood_Name":"쌀밥","CfFood_Origin":"쌀 국내산","CfMenuID":1308},{"CfFoodID":12570,"CfFood_Name":"스크램블드에그","CfFood_Origin":"","CfMenuID":1308},{"CfFoodID":12571,"CfFood_Name":"연두부&양념장","CfFood_Origin":"","CfMenuID":1308},{"CfFoodID":12572,"CfFood_Name":"오징어젓","CfFood_Origin":"","CfMenuID":1308},{"CfFoodID":12573,"CfFood_Name":"포기김치","CfFood_Origin":"김치 국내산","CfMenuID":1308},{"CfFoodID":12574,"CfFood_Name":"토스트&커피&숭늉","CfFood_Origin":"","CfMenuID":1308}],"MenuAttachInfo":null,"CfMenuID":1308,"CfMenu_Date":new Date(1415890800000),"CfMeal_Gubun":"1","CfMenu_Type":"1","CfMenu_Name":"","CfMenu_Food":"유부김치국","CfMenu_Origin":"김치 국내산","CfMenu_KCal":0,"CfFileID":0,"TempYN":"N"}];
+        var LunchListJson = [{"MenuFoodList":[{"CfFoodID":12449,"CfFood_Name":"된장찌개","CfFood_Origin":"","CfMenuID":1293},{"CfFoodID":12450,"CfFood_Name":"쌀밥","CfFood_Origin":"쌀 국내산","CfMenuID":1293},{"CfFoodID":12451,"CfFood_Name":"순대야채볶음","CfFood_Origin":"돈육 국내산","CfMenuID":1293},{"CfFoodID":12452,"CfFood_Name":"시금치나물","CfFood_Origin":"","CfMenuID":1293},{"CfFoodID":12453,"CfFood_Name":"포기김치","CfFood_Origin":"김치 국내산","CfMenuID":1293},{"CfFoodID":12454,"CfFood_Name":"레몬차","CfFood_Origin":"","CfMenuID":1293}],"MenuAttachInfo":null,"CfMenuID":1293,"CfMenu_Date":new Date(1415545200000),"CfMeal_Gubun":"2","CfMenu_Type":"1","CfMenu_Name":"A","CfMenu_Food":"닭매운볶음","CfMenu_Origin":"닭 국내산","CfMenu_KCal":912,"CfFileID":0,"TempYN":"N"},{"MenuFoodList":[{"CfFoodID":12455,"CfFood_Name":"된장찌개","CfFood_Origin":"","CfMenuID":1294},{"CfFoodID":12456,"CfFood_Name":"영양밥","CfFood_Origin":"쌀 국내산","CfMenuID":1294},{"CfFoodID":12457,"CfFood_Name":"순대야채볶음","CfFood_Origin":"돈육 국내산","CfMenuID":1294},{"CfFoodID":12458,"CfFood_Name":"고구마맛탕","CfFood_Origin":"","CfMenuID":1294},{"CfFoodID":12459,"CfFood_Name":"깍두기","CfFood_Origin":"김치 국내산","CfMenuID":1294},{"CfFoodID":12460,"CfFood_Name":"레몬차","CfFood_Origin":"","CfMenuID":1294}],"MenuAttachInfo":null,"CfMenuID":1294,"CfMenu_Date":new Date(1415545200000),"CfMeal_Gubun":"2","CfMenu_Type":"2","CfMenu_Name":"B","CfMenu_Food":"제육김치볶음&온두부","CfMenu_Origin":"돈육 국내산 김치 국내산","CfMenu_KCal":889,"CfFileID":0,"TempYN":"N"},{"MenuFoodList":[{"CfFoodID":12473,"CfFood_Name":"군만두","CfFood_Origin":"","CfMenuID":1297},{"CfFoodID":12474,"CfFood_Name":"단무지무침","CfFood_Origin":"","CfMenuID":1297},{"CfFoodID":12475,"CfFood_Name":"땅콩조림","CfFood_Origin":"","CfMenuID":1297},{"CfFoodID":12476,"CfFood_Name":"깍두기","CfFood_Origin":"김치 국내산","CfMenuID":1297},{"CfFoodID":12477,"CfFood_Name":"쟈스민차","CfFood_Origin":"","CfMenuID":1297}],"MenuAttachInfo":null,"CfMenuID":1297,"CfMenu_Date":new Date(1415631600000),"CfMeal_Gubun":"2","CfMenu_Type":"1","CfMenu_Name":"A","CfMenu_Food":"쟁반짜장면","CfMenu_Origin":"돈육 국내산","CfMenu_KCal":990,"CfFileID":0,"TempYN":"N"},{"MenuFoodList":[{"CfFoodID":12478,"CfFood_Name":"취나물밥&양념장","CfFood_Origin":"쌀 국내산","CfMenuID":1298},{"CfFoodID":12479,"CfFood_Name":"청국장","CfFood_Origin":"우육 국내산","CfMenuID":1298},{"CfFoodID":12480,"CfFood_Name":"후랑크햄볶음","CfFood_Origin":"","CfMenuID":1298},{"CfFoodID":12481,"CfFood_Name":"치커리무침","CfFood_Origin":"","CfMenuID":1298},{"CfFoodID":12482,"CfFood_Name":"포기김치","CfFood_Origin":"김치 국내산","CfMenuID":1298},{"CfFoodID":12483,"CfFood_Name":"쟈스민차","CfFood_Origin":"","CfMenuID":1298}],"MenuAttachInfo":null,"CfMenuID":1298,"CfMenu_Date":new Date(1415631600000),"CfMeal_Gubun":"2","CfMenu_Type":"2","CfMenu_Name":"B","CfMenu_Food":"꽁치구이&와사비장","CfMenu_Origin":"꽁치 국내산","CfMenu_KCal":808,"CfFileID":0,"TempYN":"N"},{"MenuFoodList":[{"CfFoodID":12496,"CfFood_Name":"수제소세지볶음","CfFood_Origin":"","CfMenuID":1301},{"CfFoodID":12497,"CfFood_Name":"유부장국","CfFood_Origin":"","CfMenuID":1301},{"CfFoodID":12498,"CfFood_Name":"궁중떡볶음","CfFood_Origin":"우육 호주산","CfMenuID":1301},{"CfFoodID":12499,"CfFood_Name":"피클","CfFood_Origin":"","CfMenuID":1301},{"CfFoodID":12500,"CfFood_Name":"포기김치","CfFood_Origin":"김치 국내산","CfMenuID":1301},{"CfFoodID":12501,"CfFood_Name":"미숫가루","CfFood_Origin":"","CfMenuID":1301},{"CfFoodID":12544,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1301},{"CfFoodID":12545,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1301},{"CfFoodID":12546,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1301},{"CfFoodID":12547,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1301},{"CfFoodID":12548,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1301},{"CfFoodID":12549,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1301},{"CfFoodID":12550,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1301},{"CfFoodID":12551,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1301}],"MenuAttachInfo":null,"CfMenuID":1301,"CfMenu_Date":new Date(1415718000000),"CfMeal_Gubun":"2","CfMenu_Type":"1","CfMenu_Name":"A","CfMenu_Food":"오므라이스&데미소스","CfMenu_Origin":"돈계육 국내산 쌀 국내산","CfMenu_KCal":985,"CfFileID":0,"TempYN":"N"},{"MenuFoodList":[{"CfFoodID":12502,"CfFood_Name":"유부장국","CfFood_Origin":"","CfMenuID":1302},{"CfFoodID":12503,"CfFood_Name":"궁중떡볶음","CfFood_Origin":"우육 호주산","CfMenuID":1302},{"CfFoodID":12504,"CfFood_Name":"마카로니샐러드","CfFood_Origin":"","CfMenuID":1302},{"CfFoodID":12505,"CfFood_Name":"포기김치","CfFood_Origin":"김치 국내산","CfMenuID":1302},{"CfFoodID":12506,"CfFood_Name":"미숫가루","CfFood_Origin":"","CfMenuID":1302},{"CfFoodID":12552,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1302},{"CfFoodID":12553,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1302},{"CfFoodID":12554,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1302},{"CfFoodID":12555,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1302},{"CfFoodID":12556,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1302},{"CfFoodID":12557,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1302},{"CfFoodID":12558,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1302},{"CfFoodID":12559,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1302},{"CfFoodID":12560,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1302}],"MenuAttachInfo":null,"CfMenuID":1302,"CfMenu_Date":new Date(1415718000000),"CfMeal_Gubun":"2","CfMenu_Type":"2","CfMenu_Name":"B","CfMenu_Food":"참치회덮밥&초고추장","CfMenu_Origin":"쌀 국내산","CfMenu_KCal":891,"CfFileID":0,"TempYN":"N"},{"MenuFoodList":[{"CfFoodID":12519,"CfFood_Name":"소고기무국","CfFood_Origin":"우육 호주산","CfMenuID":1305},{"CfFoodID":12520,"CfFood_Name":"뱅어포볶음","CfFood_Origin":"","CfMenuID":1305},{"CfFoodID":12521,"CfFood_Name":"하루나무침","CfFood_Origin":"","CfMenuID":1305},{"CfFoodID":12522,"CfFood_Name":"포기김치","CfFood_Origin":"김치 국내산","CfMenuID":1305},{"CfFoodID":12523,"CfFood_Name":"식혜","CfFood_Origin":"쌀 국내산","CfMenuID":1305}],"MenuAttachInfo":null,"CfMenuID":1305,"CfMenu_Date":new Date(1415804400000),"CfMeal_Gubun":"2","CfMenu_Type":"1","CfMenu_Name":"A","CfMenu_Food":"하이라이스&치즈롤","CfMenu_Origin":"돈육 국내산 쌀 국내산","CfMenu_KCal":898,"CfFileID":0,"TempYN":"N"},{"MenuFoodList":[{"CfFoodID":12524,"CfFood_Name":"콩나물밥&양념장","CfFood_Origin":"쌀 국내산","CfMenuID":1306},{"CfFoodID":12525,"CfFood_Name":"소고기무국","CfFood_Origin":"우육 호주산","CfMenuID":1306},{"CfFoodID":12526,"CfFood_Name":"야채버섯전","CfFood_Origin":"","CfMenuID":1306},{"CfFoodID":12527,"CfFood_Name":"하루나무침","CfFood_Origin":"","CfMenuID":1306},{"CfFoodID":12528,"CfFood_Name":"포기김치","CfFood_Origin":"김치 국내산","CfMenuID":1306},{"CfFoodID":12529,"CfFood_Name":"식혜","CfFood_Origin":"쌀 국내산","CfMenuID":1306}],"MenuAttachInfo":null,"CfMenuID":1306,"CfMenu_Date":new Date(1415804400000),"CfMeal_Gubun":"2","CfMenu_Type":"2","CfMenu_Name":"B","CfMenu_Food":"갈치구이","CfMenu_Origin":"갈치 중국산","CfMenu_KCal":876,"CfFileID":0,"TempYN":"N"},{"MenuFoodList":[{"CfFoodID":12575,"CfFood_Name":"마늘빵","CfFood_Origin":"","CfMenuID":1309},{"CfFoodID":12576,"CfFood_Name":"케이준샐러드&머스타드","CfFood_Origin":"","CfMenuID":1309},{"CfFoodID":12577,"CfFood_Name":"피클","CfFood_Origin":"","CfMenuID":1309},{"CfFoodID":12578,"CfFood_Name":"깍두기","CfFood_Origin":"김치 국내산","CfMenuID":1309},{"CfFoodID":12579,"CfFood_Name":"녹차","CfFood_Origin":"","CfMenuID":1309}],"MenuAttachInfo":null,"CfMenuID":1309,"CfMenu_Date":new Date(1415890800000),"CfMeal_Gubun":"2","CfMenu_Type":"1","CfMenu_Name":"A","CfMenu_Food":"크림스파게티","CfMenu_Origin":"","CfMenu_KCal":975,"CfFileID":0,"TempYN":"N"},{"MenuFoodList":[{"CfFoodID":12580,"CfFood_Name":"우동국물","CfFood_Origin":"","CfMenuID":1310},{"CfFoodID":12581,"CfFood_Name":"계란찜","CfFood_Origin":"","CfMenuID":1310},{"CfFoodID":12582,"CfFood_Name":"연근조림","CfFood_Origin":"","CfMenuID":1310},{"CfFoodID":12583,"CfFood_Name":"얼갈이무침","CfFood_Origin":"","CfMenuID":1310},{"CfFoodID":12584,"CfFood_Name":"포기김치","CfFood_Origin":"김치 국내산","CfMenuID":1310},{"CfFoodID":12585,"CfFood_Name":"녹차","CfFood_Origin":"","CfMenuID":1310}],"MenuAttachInfo":null,"CfMenuID":1310,"CfMenu_Date":new Date(1415890800000),"CfMeal_Gubun":"2","CfMenu_Type":"2","CfMenu_Name":"B","CfMenu_Food":"낙지비빔밥","CfMenu_Origin":"낙지 베트남산 쌀 국내산","CfMenu_KCal":835,"CfFileID":0,"TempYN":"N"}];
+        var DinnerListJson = [{"MenuFoodList":[{"CfFoodID":12461,"CfFood_Name":"쌀밥","CfFood_Origin":"쌀 국내산","CfMenuID":1295},{"CfFoodID":12462,"CfFood_Name":"비엔나구이&케찹","CfFood_Origin":"돈계육 국내산","CfMenuID":1295},{"CfFoodID":12463,"CfFood_Name":"야채튀김","CfFood_Origin":"","CfMenuID":1295},{"CfFoodID":12464,"CfFood_Name":"애호박볶음","CfFood_Origin":"","CfMenuID":1295},{"CfFoodID":12465,"CfFood_Name":"깍두기","CfFood_Origin":"김치 국내산","CfMenuID":1295},{"CfFoodID":12466,"CfFood_Name":"아이스티","CfFood_Origin":"","CfMenuID":1295}],"MenuAttachInfo":null,"CfMenuID":1295,"CfMenu_Date":new Date(1415545200000),"CfMeal_Gubun":"3","CfMenu_Type":"1","CfMenu_Name":"","CfMenu_Food":"순두부찌개","CfMenu_Origin":"돈육 국내산 김치 국내산","CfMenu_KCal":932,"CfFileID":0,"TempYN":"N"},{"MenuFoodList":[{"CfFoodID":12484,"CfFood_Name":"쌀밥","CfFood_Origin":"쌀 국내산","CfMenuID":1299},{"CfFoodID":12485,"CfFood_Name":"다미사무국","CfFood_Origin":"","CfMenuID":1299},{"CfFoodID":12486,"CfFood_Name":"모듬쌈&쌈장","CfFood_Origin":"","CfMenuID":1299},{"CfFoodID":12487,"CfFood_Name":"야채고로케&케찹","CfFood_Origin":"","CfMenuID":1299},{"CfFoodID":12488,"CfFood_Name":"포기김치","CfFood_Origin":"김치 국내산","CfMenuID":1299},{"CfFoodID":12489,"CfFood_Name":"매실차","CfFood_Origin":"","CfMenuID":1299}],"MenuAttachInfo":null,"CfMenuID":1299,"CfMenu_Date":new Date(1415631600000),"CfMeal_Gubun":"3","CfMenu_Type":"1","CfMenu_Name":"","CfMenu_Food":"뚝배기불고기","CfMenu_Origin":"우육 국내산","CfMenu_KCal":886,"CfFileID":0,"TempYN":"N"},{"MenuFoodList":[{"CfFoodID":12507,"CfFood_Name":"수제비국","CfFood_Origin":"","CfMenuID":1303},{"CfFoodID":12508,"CfFood_Name":"단호박튀김","CfFood_Origin":"","CfMenuID":1303},{"CfFoodID":12509,"CfFood_Name":"김치전","CfFood_Origin":"김치 국내산","CfMenuID":1303},{"CfFoodID":12510,"CfFood_Name":"도토리묵무침","CfFood_Origin":"","CfMenuID":1303},{"CfFoodID":12511,"CfFood_Name":"깍두기","CfFood_Origin":"김치 국내산","CfMenuID":1303},{"CfFoodID":12512,"CfFood_Name":"쿨피스","CfFood_Origin":"","CfMenuID":1303},{"CfFoodID":12561,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1303},{"CfFoodID":12562,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1303},{"CfFoodID":12563,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1303},{"CfFoodID":12564,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1303},{"CfFoodID":12565,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1303},{"CfFoodID":12566,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1303},{"CfFoodID":12567,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1303},{"CfFoodID":12568,"CfFood_Name":"","CfFood_Origin":"","CfMenuID":1303}],"MenuAttachInfo":null,"CfMenuID":1303,"CfMenu_Date":new Date(1415718000000),"CfMeal_Gubun":"3","CfMenu_Type":"1","CfMenu_Name":"","CfMenu_Food":"동태콩나물찜","CfMenu_Origin":"동태 러시아산","CfMenu_KCal":923,"CfFileID":0,"TempYN":"N"},{"MenuFoodList":[{"CfFoodID":12530,"CfFood_Name":"미소장국","CfFood_Origin":"","CfMenuID":1307},{"CfFoodID":12531,"CfFood_Name":"어묵볶음","CfFood_Origin":"","CfMenuID":1307},{"CfFoodID":12532,"CfFood_Name":"오이생채","CfFood_Origin":"","CfMenuID":1307},{"CfFoodID":12533,"CfFood_Name":"건파래볶음","CfFood_Origin":"","CfMenuID":1307},{"CfFoodID":12534,"CfFood_Name":"포기김치","CfFood_Origin":"김치 국내산","CfMenuID":1307},{"CfFoodID":12535,"CfFood_Name":"유자차","CfFood_Origin":"","CfMenuID":1307}],"MenuAttachInfo":null,"CfMenuID":1307,"CfMenu_Date":new Date(1415804400000),"CfMeal_Gubun":"3","CfMenu_Type":"1","CfMenu_Name":"","CfMenu_Food":"삼겹살숙주덮밥","CfMenu_Origin":"돈육 국내산 쌀 국내산","CfMenu_KCal":859,"CfFileID":0,"TempYN":"N"},{"MenuFoodList":[{"CfFoodID":12586,"CfFood_Name":"콩나물국","CfFood_Origin":"","CfMenuID":1311},{"CfFoodID":12587,"CfFood_Name":"감자베이컨볶음","CfFood_Origin":"","CfMenuID":1311},{"CfFoodID":12588,"CfFood_Name":"메추리알장조림","CfFood_Origin":"","CfMenuID":1311},{"CfFoodID":12589,"CfFood_Name":"상추겉절이","CfFood_Origin":"","CfMenuID":1311},{"CfFoodID":12590,"CfFood_Name":"포기김치","CfFood_Origin":"김치 국내산","CfMenuID":1311},{"CfFoodID":12591,"CfFood_Name":"감귤쥬스","CfFood_Origin":"","CfMenuID":1311}],"MenuAttachInfo":null,"CfMenuID":1311,"CfMenu_Date":new Date(1415890800000),"CfMeal_Gubun":"3","CfMenu_Type":"1","CfMenu_Name":"","CfMenu_Food":"코다리구이","CfMenu_Origin":"코다리 러시아산","CfMenu_KCal":870,"CfFileID":0,"TempYN":"N"}];
+        var MenuSettingValues = [{"CfMeal_Gubun":"1","CfMenu_Type":"1","CfMenu_Name":""},{"CfMeal_Gubun":"2","CfMenu_Type":"1","CfMenu_Name":"A"},{"CfMeal_Gubun":"2","CfMenu_Type":"2","CfMenu_Name":"B"},{"CfMeal_Gubun":"3","CfMenu_Type":"1","CfMenu_Name":""}];
+
+        $(document).ready(function () {
+            var selectDate = htmlGetDate();
+
+            var dateString = "";
+
+            dateString += selectDate.getFullYear() + "-";
+            if ((selectDate.getMonth() + 1).toString().length != 2) { dateString += "0" }
+            dateString += (selectDate.getMonth() + 1) + "&nbsp;" + "셋째주"
+
+            $("#MonthWeek").html(dateString);
+
+            selectDate.setDate((selectDate.getDate() - selectDate.getDay()) + 1);
+
+            dateWriter(selectDate);
+            tagWriter("1", "1");
+            tagWriter("2", "2");
+            tagWriter("3", "1");
+            dataWriter("1", "5");
+            dataWriter("2", "10");
+            dataWriter("3", "5");
+        })
+
+        //파라미터 date값을 받아와 스크립트 date객체로 변경(date파라미터가 없을시 오늘날짜 date return)
+        function htmlGetDate() {
+            var date = new Date();
+            var url = window.location.href;
+            if (url.indexOf('?') > -1) {
+                var dateStr = $.getUrlVar("Date");
+                var yearStr = dateStr.substring(0, 4);
+                var monthStr = dateStr.substring(4, 6);
+                var dayStr = dateStr.substring(6, dateStr.length);
+                date.setFullYear(Number(yearStr), (Number(monthStr)-1) , Number(dayStr));
+            }
+            
+            return date;
+        }
+
+        //데이터 젤윗칸 날짜 출력란에 출력할 날짜데이터
+        function dateWriter(startDate) {
+            var weekNum = 0;
+            while (1) {
+                var dateString = "";
+                if ((startDate.getMonth() + 1).toString().length != 2) { dateString += "0" }
+                dateString += (startDate.getMonth() + 1) + "-";
+                if ((startDate.getDate()).toString().length != 2) { dateString += "0" }
+                dateString += startDate.getDate() + "&nbsp;";
+
+                $(".day:eq(" + weekNum + ")").append(dateString);
+                switch (weekNum) {
+                    case 0:
+                        $(".day:eq(" + weekNum + ")").append("월");
+                        break;
+                    case 1:
+                        $(".day:eq(" + weekNum + ")").append("화");
+                        break;
+                    case 2:
+                        $(".day:eq(" + weekNum + ")").append("수");
+                        break;
+                    case 3:
+                        $(".day:eq(" + weekNum + ")").append("목");
+                        break;
+                    case 4:
+                        $(".day:eq(" + weekNum + ")").append("금");
+                        break;
+                    case 5:
+                        $(".day:eq(" + weekNum + ")").append("토");
+                        break;
+                }
+                if (startDate.getFullYear() == new Date().getFullYear()
+                    && startDate.getMonth() == new Date().getMonth()
+                    && startDate.getDate() == new Date().getDate()) {
+                    $(".day:eq(" + weekNum + ")").parent().addClass("today");
+                    for (var i = 0; i < 5; i++) {
+                        $(".menuLine1:eq(" + i + ") > td:eq(" + weekNum + ")").addClass("today");
+                        $(".menuLine2:eq(" + i + ") > td:eq(" + weekNum + ")").addClass("today");
+                        $(".menuLine3:eq(" + i + ") > td:eq(" + weekNum + ")").addClass("today");
+                    }
+                }
+
+                startDate.setDate(startDate.getDate() + 1);
+                weekNum++;
+                if (weekNum > 6) {
+                    break;
+                }
+            }
+        }
+
+        //세팅된 옵션에 맞게 태그 생성
+        function tagWriter(mealGubun, menuCount) {
+            for (var i = 0; i < 5 ; i++) {
+                if (i >= Number(menuCount)) {
+                    $(".menuLine" + mealGubun + ":eq(" + i + ")").attr({
+                        style: 'display:none;'
+                    });
+                }
+            }
+
+            for (var k = 0; k < MenuSettingValues.length ; k++) {
+                var addTag = "&nbsp;";
+                switch (MenuSettingValues[k].CfMeal_Gubun) {
+                    case "1":
+                        if (MenuSettingValues[k].CfMenu_Name.length != 0) {
+                            addTag += MenuSettingValues[k].CfMenu_Name;
+                        }
+                        break;
+                    case "2":
+                        if (MenuSettingValues[k].CfMenu_Name.length != 0) {
+                            addTag += MenuSettingValues[k].CfMenu_Name;
+                        }
+                        break;
+                    case "3":
+                        if (MenuSettingValues[k].CfMenu_Name.length != 0) {
+                            addTag += MenuSettingValues[k].CfMenu_Name;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                $(".menuLine" + MenuSettingValues[k].CfMeal_Gubun + ":eq(" + (Number(MenuSettingValues[k].CfMenu_Type) - 1) + ") > th > span > em").html(addTag);
+            }
+        }
+
+        //1주일치 메뉴 데이터 태그에 작성
+        function dataWriter(mealGubun, totalCount) {
+            var j = 0;
+
+            if (BreakFastListJson != null && LunchListJson != null && DinnerListJson != null) {
+                for (var i = 0; i < Number(totalCount) ; i++) {
+                    switch (mealGubun) {
+                        case "1":
+                            if (BreakFastListJson[i] != null && BreakFastListJson[i].length != 0) {
+                                if (BreakFastListJson[i].CfMenu_Type != null && BreakFastListJson[i].CfMenu_Type.length != 0) {
+                                    if (BreakFastListJson[i].TempYN == "N") {
+                                        j = BreakFastListJson[i].CfMenu_Date.getDay() - 1;
+                                        var Kcal;
+                                        addTag = "";
+                                        addTag += "<div class='food_list'>";
+                                        if (BreakFastListJson[i].MenuAttachInfo != null && BreakFastListJson[i].MenuAttachInfo != "") {
+                                            var folder = BreakFastListJson[i].MenuAttachInfo.Folder.substring(1, BreakFastListJson[i].MenuAttachInfo.Folder.lastIndexOf("\\"));
+                                            var guid = BreakFastListJson[i].MenuAttachInfo.Folder.substring(BreakFastListJson[i].MenuAttachInfo.Folder.lastIndexOf("\\") + 1, BreakFastListJson[i].MenuAttachInfo.Folder.length);
+                                            var fileName = BreakFastListJson[i].MenuAttachInfo.FileName;
+                                            if (fileName != null && fileName != "") {
+                                                //툴팁용 img 태그
+                                                //addTag += "<div class='picture'><img src='../../Common/Controls/DextUpload/Download.ashx?Folder="
+                                                //    + folder + "&ItemGuid=" + guid + "&FileName=thumb_" + fileName + "' style='width:80px; height:50px' onerror='$(this).hide()' zoom_out='zoom_out'/></div>";
+                                                addTag += "<div class='picture'><img src='../../Common/Controls/DextUpload/Download.ashx?Folder="
+                                                    + folder + "&ItemGuid=" + guid + "&FileName=thumb_" + fileName + "' style='width:77px; height:63px' onerror='$(this).hide()'/>";
+                                                addTag += "<div class='picture_b'><img src='../../Common/Controls/DextUpload/Download.ashx?Folder="
+                                                    + folder + "&ItemGuid=" + guid + "&FileName=" + fileName + "' style='width:490px; height:395px' onerror='$(this).hide()'/</div></div>";
+                                            }
+                                        }
+                                        addTag += "<dl><dt>";
+                                        if (BreakFastListJson[i].CfMenu_Food != null && BreakFastListJson[i].CfMenu_Food.length != 0) {
+                                            addTag += BreakFastListJson[i].CfMenu_Food + "<br />";
+                                            if (BreakFastListJson[i].CfMenu_Origin != null && BreakFastListJson[i].CfMenu_Origin.length != 0) {
+                                                addTag += "(" + BreakFastListJson[i].CfMenu_Origin + ")";
+                                            }
+                                        }
+                                        addTag += "</dt><dd>";
+
+                                        if (BreakFastListJson[i].MenuFoodList != null && BreakFastListJson[i].MenuFoodList.length != 0) {
+                                            for (var k = 0; k < BreakFastListJson[i].MenuFoodList.length; k++) {
+                                                if (BreakFastListJson[i].MenuFoodList[k].CfFood_Name != null && BreakFastListJson[i].MenuFoodList[k].CfFood_Name.length != 0) {
+                                                    addTag += BreakFastListJson[i].MenuFoodList[k].CfFood_Name;
+                                                    addTag += "<br />";
+                                                    if (BreakFastListJson[i].MenuFoodList[k].CfFood_Origin != null && BreakFastListJson[i].MenuFoodList[k].CfFood_Origin != "") {
+                                                        addTag += "(" + BreakFastListJson[i].MenuFoodList[k].CfFood_Origin + ")<br />";
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        addTag += "</dd></dl>";
+                                        if (BreakFastListJson[i].CfMenu_KCal != "0") {
+                                            Kcal = BreakFastListJson[i].CfMenu_KCal.format();
+                                            addTag += "<p class='kcal'><em>" + Kcal + "</em>kcal</p></div>";
+                                        }
+                                        if (BreakFastListJson[i].CfMenu_Food == null || BreakFastListJson[i].CfMenu_Food.length == 0) {
+                                            if (BreakFastListJson[i].MenuAttachInfo == null) {
+                                                if (BreakFastListJson[i].MenuFoodList != null) {
+                                                    for (var k = 0; k < BreakFastListJson[i].MenuFoodList.length; k++) {
+                                                        if (BreakFastListJson[i].MenuFoodList[k].CfFood_Name.length != 0) {
+                                                            $(".menuLine" + mealGubun + ":eq(" + (BreakFastListJson[i].CfMenu_Type - 1) + ") > td:eq(" + j + ")").removeClass("none");
+                                                            $(".menuLine" + mealGubun + ":eq(" + (BreakFastListJson[i].CfMenu_Type - 1) + ") > td:eq(" + j + ")").removeClass("saturday");
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            else {
+                                                if (BreakFastListJson[i].MenuAttachInfo.FileName.length != 0) {
+                                                    $(".menuLine" + mealGubun + ":eq(" + (BreakFastListJson[i].CfMenu_Type - 1) + ") > td:eq(" + j + ")").removeClass("none");
+                                                    $(".menuLine" + mealGubun + ":eq(" + (BreakFastListJson[i].CfMenu_Type - 1) + ") > td:eq(" + j + ")").removeClass("saturday");
+                                                }
+                                            }
+                                        }
+                                        else {
+                                            $(".menuLine" + mealGubun + ":eq(" + (BreakFastListJson[i].CfMenu_Type - 1) + ") > td:eq(" + j + ")").removeClass("none");
+                                            $(".menuLine" + mealGubun + ":eq(" + (BreakFastListJson[i].CfMenu_Type - 1) + ") > td:eq(" + j + ")").removeClass("saturday");
+                                        }
+                                        $(".menuLine" + mealGubun + ":eq(" + (BreakFastListJson[i].CfMenu_Type - 1) + ") > td:eq(" + j + ")").html(addTag);
+                                    }
+                                }
+                            }
+                            break;
+                        case "2":
+                            if (LunchListJson[i] != null && LunchListJson[i].length != 0) {
+                                if (LunchListJson[i].CfMenu_Type != null && LunchListJson[i].CfMenu_Type.length != 0) {
+                                    if (LunchListJson[i].TempYN == "N") {
+                                        j = LunchListJson[i].CfMenu_Date.getDay() - 1;
+                                        var Kcal;
+                                        addTag = "";
+                                        addTag += "<div class='food_list'>";
+                                        if (LunchListJson[i].MenuAttachInfo != null && LunchListJson[i].MenuAttachInfo != "") {
+                                            var folder = LunchListJson[i].MenuAttachInfo.Folder.substring(1, LunchListJson[i].MenuAttachInfo.Folder.lastIndexOf("\\"));
+                                            var guid = LunchListJson[i].MenuAttachInfo.Folder.substring(LunchListJson[i].MenuAttachInfo.Folder.lastIndexOf("\\") + 1, LunchListJson[i].MenuAttachInfo.Folder.length);
+                                            var fileName = LunchListJson[i].MenuAttachInfo.FileName;
+                                            if (fileName != null && fileName != "") {
+                                                //툴팁용 img 태그
+                                                //addTag += "<div class='picture'><img src='../../Common/Controls/DextUpload/Download.ashx?Folder="
+                                                //    + folder + "&ItemGuid=" + guid + "&FileName=thumb_" + fileName + "' style='width:80px; height:50px' onerror='$(this).hide()' zoom_out='zoom_out'/></div>";
+                                                addTag += "<div class='picture'><img src='../../Common/Controls/DextUpload/Download.ashx?Folder="
+                                                    + folder + "&ItemGuid=" + guid + "&FileName=thumb_" + fileName + "' style='width:77px; height:63px' onerror='$(this).hide()'/>";
+                                                addTag += "<div class='picture_b'><img src='../../Common/Controls/DextUpload/Download.ashx?Folder="
+                                                    + folder + "&ItemGuid=" + guid + "&FileName=" + fileName + "' style='width:490px; height:395px' onerror='$(this).hide()'/</div></div>";
+                                            }
+                                        }
+
+                                        addTag += "<dl><dt>";
+                                        if (LunchListJson[i].CfMenu_Food != null && LunchListJson[i].CfMenu_Food.length != 0) {
+                                            addTag += LunchListJson[i].CfMenu_Food + "<br />";
+                                            if (LunchListJson[i].CfMenu_Origin != null && LunchListJson[i].CfMenu_Origin.length != 0) {
+                                                addTag += "(" + LunchListJson[i].CfMenu_Origin + ")";
+                                            }
+                                        }
+                                        addTag += "</dt><dd>";
+
+                                        if (LunchListJson[i].MenuFoodList != null && LunchListJson[i].MenuFoodList.length != 0) {
+                                            for (var k = 0; k < LunchListJson[i].MenuFoodList.length; k++) {
+                                                if (LunchListJson[i].MenuFoodList[k].CfFood_Name != null && LunchListJson[i].MenuFoodList[k].CfFood_Name.length != 0) {
+                                                    addTag += LunchListJson[i].MenuFoodList[k].CfFood_Name;
+                                                    addTag += "<br />";
+                                                    if (LunchListJson[i].MenuFoodList[k].CfFood_Origin != null && LunchListJson[i].MenuFoodList[k].CfFood_Origin != "") {
+                                                        addTag += "(" + LunchListJson[i].MenuFoodList[k].CfFood_Origin + ")<br />";
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        addTag += "</dd></dl>";
+                                        if (LunchListJson[i].CfMenu_KCal != "0") {
+                                            Kcal = LunchListJson[i].CfMenu_KCal.format();
+                                            addTag += "<p class='kcal'><em>" + Kcal + "</em>kcal</p></div>";
+                                        }
+
+                                        if (LunchListJson[i].CfMenu_Food == null || LunchListJson[i].CfMenu_Food.length == 0) {
+                                            if (LunchListJson[i].MenuAttachInfo == null) {
+                                                if (LunchListJson[i].MenuFoodList != null) {
+                                                    for (var k = 0; k < LunchListJson[i].MenuFoodList.length; k++) {
+                                                        if (LunchListJson[i].MenuFoodList[k].CfFood_Name.length != 0) {
+                                                            $(".menuLine" + mealGubun + ":eq(" + (LunchListJson[i].CfMenu_Type - 1) + ") > td:eq(" + j + ")").removeClass("none");
+                                                            $(".menuLine" + mealGubun + ":eq(" + (LunchListJson[i].CfMenu_Type - 1) + ") > td:eq(" + j + ")").removeClass("saturday");
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            else {
+                                                if (LunchListJson[i].MenuAttachInfo.FileName.length != 0) {
+                                                    $(".menuLine" + mealGubun + ":eq(" + (LunchListJson[i].CfMenu_Type - 1) + ") > td:eq(" + j + ")").removeClass("none");
+                                                    $(".menuLine" + mealGubun + ":eq(" + (LunchListJson[i].CfMenu_Type - 1) + ") > td:eq(" + j + ")").removeClass("saturday");
+                                                }
+                                            }
+                                        }
+                                        else {
+                                            $(".menuLine" + mealGubun + ":eq(" + (LunchListJson[i].CfMenu_Type - 1) + ") > td:eq(" + j + ")").removeClass("none");
+                                            $(".menuLine" + mealGubun + ":eq(" + (LunchListJson[i].CfMenu_Type - 1) + ") > td:eq(" + j + ")").removeClass("saturday");
+                                        }
+                                        $(".menuLine" + mealGubun + ":eq(" + (LunchListJson[i].CfMenu_Type - 1) + ") > td:eq(" + j + ")").html(addTag);
+                                    }
+                                }
+                            }
+                            break;
+                        case "3":
+                            if (DinnerListJson[i] != null && DinnerListJson[i].length != 0) {
+                                if (DinnerListJson[i].CfMenu_Type != null && DinnerListJson[i].CfMenu_Type.length != 0) {
+                                    if (DinnerListJson[i].TempYN == "N") {
+                                        j = DinnerListJson[i].CfMenu_Date.getDay() - 1;
+                                        var Kcal;
+                                        addTag = "";
+                                        addTag += "<div class='food_list'>";
+                                        if (DinnerListJson[i].MenuAttachInfo != null && DinnerListJson[i].MenuAttachInfo != "") {
+                                            var folder = DinnerListJson[i].MenuAttachInfo.Folder.substring(1, DinnerListJson[i].MenuAttachInfo.Folder.lastIndexOf("\\"));
+                                            var guid = DinnerListJson[i].MenuAttachInfo.Folder.substring(DinnerListJson[i].MenuAttachInfo.Folder.lastIndexOf("\\") + 1, DinnerListJson[i].MenuAttachInfo.Folder.length);
+                                            var fileName = DinnerListJson[i].MenuAttachInfo.FileName;
+                                            if (fileName != null && fileName != "") {
+                                                //툴팁용 img 태그
+                                                //addTag += "<div class='picture'><img src='../../Common/Controls/DextUpload/Download.ashx?Folder="
+                                                //    + folder + "&ItemGuid=" + guid + "&FileName=thumb_" + fileName + "' style='width:80px; height:50px' onerror='$(this).hide()' zoom_out='zoom_out'/></div>";
+                                                addTag += "<div class='picture'><img src='../../Common/Controls/DextUpload/Download.ashx?Folder="
+                                                    + folder + "&ItemGuid=" + guid + "&FileName=thumb_" + fileName + "' style='width:77px; height:63px' onerror='$(this).hide()'/>";
+                                                addTag += "<div class='picture_b'><img src='../../Common/Controls/DextUpload/Download.ashx?Folder="
+                                                    + folder + "&ItemGuid=" + guid + "&FileName=" + fileName + "' style='width:490px; height:395px' onerror='$(this).hide()'/</div></div>";
+                                            }
+                                        }
+
+                                        addTag += "<dl><dt>";
+                                        if (DinnerListJson[i].CfMenu_Food != null && DinnerListJson[i].CfMenu_Food.length != 0) {
+                                            addTag += DinnerListJson[i].CfMenu_Food + "<br />";
+                                            if (DinnerListJson[i].CfMenu_Origin != null && DinnerListJson[i].CfMenu_Origin.length != 0) {
+                                                addTag += "(" + DinnerListJson[i].CfMenu_Origin + ")";
+                                            }
+                                        }
+                                        addTag += "</dt><dd>";
+
+                                        if (DinnerListJson[i].MenuFoodList != null && DinnerListJson[i].MenuFoodList.length != 0) {
+                                            for (var k = 0; k < DinnerListJson[i].MenuFoodList.length; k++) {
+                                                if (DinnerListJson[i].MenuFoodList[k].CfFood_Name != null && DinnerListJson[i].MenuFoodList[k].CfFood_Name.length != 0) {
+                                                    addTag += DinnerListJson[i].MenuFoodList[k].CfFood_Name;
+                                                    addTag += "<br />";
+                                                    if (DinnerListJson[i].MenuFoodList[k].CfFood_Origin != null && DinnerListJson[i].MenuFoodList[k].CfFood_Origin != "") {
+                                                        addTag += "(" + DinnerListJson[i].MenuFoodList[k].CfFood_Origin + ")<br />";
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        addTag += "</dd></dl>";
+                                        if (DinnerListJson[i].CfMenu_KCal != "0") {
+                                            Kcal = DinnerListJson[i].CfMenu_KCal.format();
+                                            addTag += "<p class='kcal'><em>" + Kcal + "</em>kcal</p></div>";
+                                        }
+
+                                        if (DinnerListJson[i].CfMenu_Food == null || DinnerListJson[i].CfMenu_Food.length == 0) {
+                                            if (DinnerListJson[i].MenuAttachInfo == null) {
+                                                if (DinnerListJson[i].MenuFoodList != null) {
+                                                    for (var k = 0; k < DinnerListJson[i].MenuFoodList.length; k++) {
+                                                        if (DinnerListJson[i].MenuFoodList[k].CfFood_Name.length != 0) {
+                                                            $(".menuLine" + mealGubun + ":eq(" + (DinnerListJson[i].CfMenu_Type - 1) + ") > td:eq(" + j + ")").removeClass("none");
+                                                            $(".menuLine" + mealGubun + ":eq(" + (DinnerListJson[i].CfMenu_Type - 1) + ") > td:eq(" + j + ")").removeClass("saturday");
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            else {
+                                                if (DinnerListJson[i].MenuAttachInfo.FileName.length != 0) {
+                                                    $(".menuLine" + mealGubun + ":eq(" + (DinnerListJson[i].CfMenu_Type - 1) + ") > td:eq(" + j + ")").removeClass("none");
+                                                    $(".menuLine" + mealGubun + ":eq(" + (DinnerListJson[i].CfMenu_Type - 1) + ") > td:eq(" + j + ")").removeClass("saturday");
+                                                }
+                                            }
+                                        }
+                                        else {
+                                            $(".menuLine" + mealGubun + ":eq(" + (DinnerListJson[i].CfMenu_Type - 1) + ") > td:eq(" + j + ")").removeClass("none");
+                                            $(".menuLine" + mealGubun + ":eq(" + (DinnerListJson[i].CfMenu_Type - 1) + ") > td:eq(" + j + ")").removeClass("saturday");
+                                        }
+                                        $(".menuLine" + mealGubun + ":eq(" + (DinnerListJson[i].CfMenu_Type - 1) + ") > td:eq(" + j + ")").html(addTag);
+                                    }
+                                }
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+        }
+
+        //천 단위 이상 숫자 3번째마다, 찍어주는 함수
+        Number.prototype.format = function () {
+            if (this == 0) return 0;
+
+            var reg = /(^[+-]?\d+)(\d{3})/;
+            var n = (this + '');
+
+            while (reg.test(n)) n = n.replace(reg, '$1' + ',' + '$2');
+
+            return n;
+        };
+
+
+        // 이미지에 마우스 오버시 원본 이미지 툴팁 제공 (툴팁 사용) --> 디자인에서 적용으로 바뀜
+        //$(function () {
+        //    $(document).tooltip({
+        //        track: true,
+        //        items: "[zoom_out]",
+        //        content: function () {
+        //            var element = $(this);
+        //            if (element.is("[zoom_out]")) {
+        //                var text = element.attr("src").replace("thumb_", "");
+        //                return "<img class='originalIMG' alt='원본 이미지 없음'"
+        //                    + " src='" + text + "' style='width:400px;height:300px;' />";
+        //            }
+        //        }
+        //    });
+        //});
+
+        // 이전 , 다음 버튼 클릭시 수행되는 함수(1주일 전, 후로 날짜를 옮긴다.)
+        function dateChange(changeStr) {
+            var todayDate = htmlGetDate();
+            if (changeStr == "back") {
+                todayDate.setDate(todayDate.getDate() - 7 - todayDate.getDay());
+            } else {
+                todayDate.setDate(todayDate.getDate() + 7 - todayDate.getDay());
+            }
+            var dateStr = formatYYYYMMDD(todayDate);
+            var url = window.location.href;
+            if (url.indexOf('?') > -1) {
+                url = url.substring(0, url.indexOf('?')) + '?Date=' + dateStr;
+            } else {
+                url += '?Date=' + dateStr;
+            }
+            window.location.href = url;
+        }
+
+        //스크립트 date포맷을 YYYYMMDD의 string포맷으로 변경
+        function formatYYYYMMDD(date) {
+            var dateStr = "";
+            if (date.getFullYear().toString().length != 4) {
+                for (var i = 0; i < (4 - date.getFullYear().toString().length) ; i++) {
+                    dateStr += "0";
+                }
+                dateStr += date.getFullYear().toString();
+            }
+            else {
+                dateStr += date.getFullYear().toString();
+            }
+            if ((date.getMonth() + 1).toString().length != 2) {
+                dateStr += "0" + (date.getMonth() + 1).toString();
+            }
+            else {
+                dateStr += (date.getMonth() + 1).toString();
+            }
+            if (date.getDate().toString().length != 2) {
+                dateStr += "0" + date.getDate().toString();
+            }
+            else {
+                dateStr += date.getDate().toString();
+            }
+            return dateStr;
+        }
+
+        //url파라미터 가져오기
+        $.extend({
+            getUrlVars: function () {
+                var vars = [], hash;
+                var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                for (var i = 0; i < hashes.length; i++) {
+                    hash = hashes[i].split('=');
+                    vars.push(hash[0]);
+                    vars[hash[0]] = hash[1];
+                }
+                return vars;
+            },
+            getUrlVar: function (name) {
+                return $.getUrlVars()[name];
+            }
+        });
+    </script>
+    <style type="text/css">
+        .ui-tooltip {
+            max-width: 400px;
+            max-height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="WeekMenu.aspx?Date=20141109" id="ctl01">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="PMqI1rvtN21FIDTuNBXtylbFJxBAM8U7zSzaCUI2LmlONv1MdYMKwbmSLKYyg1+ZhvnWiQKbn+uGCn8Obb0Tv4iE1XzPgC5f4x5QeeYm0BV8VByd3T1XifyS2n72YfGr" />
+</div>
+
+        <div id="mask">
+            <div id="popup_warp" style="display: block;">
+                <div class="inner">
+                    <iframe src="" scrolling="auto" id="iframePop" width=""></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- header 시작 -->
+        <header>
+            <div class="headerWarp">
+                
+
+<div id="header">
+    <ul class="linkUtil">
+        <!--<li><a href="javascript:void(0)" menuid="MN_01" onclick="ServicePortalMenu.onclick(this)">HOME</a></li>-->
+        <li class="first"><a href="javascript:void(0)" menuid="ETC_01_01" onclick="ServicePortalMenu.onclick(this)">신사옥안내</a></li>
+        <li><a href="javascript:void(0)" menuid="MN_03" onclick="ServicePortalMenu.onclick(this)">FAQ</a></li>
+        <li></li>
+    </ul>
+
+    <!-- 로고 시작 -->
+    <div id="logo">
+        <a target="_self" href="/main/main.aspx">사내지원 OneClick</a>
+
+    </div>
+    <!--// 로고 종료 -->
+    <div class="pnet_qna" style="display:none"><a href="javascript:void(0)" menuid="MN_04" onclick="ServicePortalMenu.onclick(this)"><span>사옥이전 Call Center</span></a></div>
+    <!--전체메뉴보기 시작-->
+    <div class="allview">
+        <a href="javascript:///" class="btn menuview"><span class="txt">전체메뉴보기</span></a>
+    </div>
+    <!--전체메뉴보기 종료-->
+</div>
+
+<!-- gnb 메뉴 시작 -->
+<nav id="site-nav">
+    <div id="gnb">
+        <ul class="mainmenu">
+            <li class="first" id="menu1">
+                <a href="javascript:void(0)" menuid="MR_01" onclick="ServicePortalMenu.onclick(this)">회의실 예약</a>
+                <ul class="sub-box" style="display: none;">
+                    <li><a href="javascript:void(0)" menuid="MR_01_01" onclick="ServicePortalMenu.onclick(this)">회의실 예약</a>
+                        <ul>
+                            <li><a href="javascript:void(0)" menuid="MR_01_01_01" onclick="ServicePortalMenu.onclick(this)">회의실 예약</a></li>
+                            <li><a href="javascript:void(0)" menuid="MR_01_01_02" onclick="ServicePortalMenu.onclick(this)">예약가능 회의실 검색</a></li>
+                            <li><a href="javascript:void(0)" menuid="MR_01_01_03" onclick="ServicePortalMenu.onclick(this)">나의 예약현황</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0)" menuid="PR_01_01" onclick="ServicePortalMenu.onclick(this)">프로젝트 룸 예약</a>
+                        <ul>
+                            <li><a href="javascript:void(0)" menuid="PR_01_01_03" onclick="ServicePortalMenu.onclick(this)">프로젝트 룸 이용안내</a></li>
+                            <li><a href="javascript:void(0)" menuid="PR_01_01_01" onclick="ServicePortalMenu.onclick(this)">프로젝트 룸 신청</a></li>
+                            <li><a href="javascript:void(0)" menuid="PR_01_01_02" onclick="ServicePortalMenu.onclick(this)">나의 예약현황</a></li>
+                            <li><a href="javascript:void(0)" menuid="PR_01_01_04" onclick="ServicePortalMenu.onclick(this)">프로젝트 룸 예약 현황</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0)" menuid="ER_01_01" onclick="ServicePortalMenu.onclick(this)">교육장 예약</a>
+                        <ul>
+                            <li><a href="javascript:void(0)" menuid="ER_01_01_01" onclick="ServicePortalMenu.onclick(this)">교육장 예약</a></li>
+                            <li><a href="javascript:void(0)" menuid="ER_01_01_02" onclick="ServicePortalMenu.onclick(this)">나의 예약현황</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0)" menuid="EQ_01_01" onclick="ServicePortalMenu.onclick(this)">장비 예약</a>
+                        <ul>
+                            <li><a href="javascript:void(0)" menuid="EQ_01_01_01" onclick="ServicePortalMenu.onclick(this)">회의 장비 예약</a></li>
+                            <li><a href="javascript:void(0)" menuid="EQ_01_01_02" onclick="ServicePortalMenu.onclick(this)">M&amp;C 장비 예약</a></li>
+                            <li><a href="javascript:void(0)" menuid="EQ_01_01_03" onclick="ServicePortalMenu.onclick(this)">나의 예약 현황</a></li>
+                            <li><a href="javascript:void(0)" menuid="EQ_01_01_04" onclick="ServicePortalMenu.onclick(this)">대여 내역 확인</a></li>
+                        </ul>
+                    </li>
+                    <li class="last"><a href="javascript:void(0)" menuid="MR_01_04" onclick="ServicePortalMenu.onclick(this)">선혜원(SKN)이용안내</a></li>
+                </ul>
+            </li>
+            <li id="menu2">
+                <a href="javascript:void(0)" menuid="AM_01" onclick="ServicePortalMenu.onclick(this)">출입관리</a>
+                <ul class="sub-box" style="display: none;">
+                    <li><a href="javascript:void(0)" menuid="AM_01_01" onclick="ServicePortalMenu.onclick(this)">방문관리</a>
+                        <ul>
+                            <li><a href="javascript:void(0)" menuid="AM_01_01_01" onclick="ServicePortalMenu.onclick(this)">방문 예약 신청</a></li>
+                            <li><a href="javascript:void(0)" menuid="AM_01_01_02" onclick="ServicePortalMenu.onclick(this)">방문 예약 신청현황</a></li>
+                            <li><a href="javascript:void(0)" menuid="AM_01_01_03" onclick="ServicePortalMenu.onclick(this)">상시 방문 예약 신청</a></li>
+                            <li><a href="javascript:void(0)" menuid="AM_01_01_04" onclick="ServicePortalMenu.onclick(this)">상시 방문 예약 신청 현황</a></li>
+                        </ul>
+                    </li>
+                    <li class="last"><a href="javascript:void(0)" menuid="AM_01_02" onclick="ServicePortalMenu.onclick(this)">ID카드 관리</a>
+                        <ul>
+                            <li><a href="javascript:void(0)" menuid="AM_01_02_01" onclick="ServicePortalMenu.onclick(this)">ID카드 발급안내</a></li>
+                            <li><a href="javascript:void(0)" menuid="AM_01_02_02" onclick="ServicePortalMenu.onclick(this)">ID카드 발급신청</a></li>
+                            <li><a href="javascript:void(0)" menuid="AM_01_02_03" onclick="ServicePortalMenu.onclick(this)">ID카드 발급조회</a></li>
+                            <li><a href="javascript:void(0)" menuid="AM_01_02_04" onclick="ServicePortalMenu.onclick(this)">ID카드 사옥등록 신청</a></li>
+                            <li><a href="javascript:void(0)" menuid="AM_01_02_05" onclick="ServicePortalMenu.onclick(this)">ID카드 사옥등록 조회</a></li>
+                            <li><a href="javascript:void(0)" menuid="AM_01_02_06" onclick="ServicePortalMenu.onclick(this)">계열사 ID카드 등록 신청</a></li>
+                            <li><a href="javascript:void(0)" menuid="AM_01_02_07" onclick="ServicePortalMenu.onclick(this)">계열사 ID카드 등록 조회</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li id="menu3">
+                <a href="javascript:void(0)" menuid="FT_01" onclick="ServicePortalMenu.onclick(this)">PleX</a>
+                <ul class="sub-box" style="display: none;">
+                    <li><a href="javascript:void(0)" menuid="FT_01_01" onclick="ServicePortalMenu.onclick(this)">정회원 이용신청</a></li>
+                    <li><a href="javascript:void(0)" menuid="FT_01_02" onclick="ServicePortalMenu.onclick(this)">준회원 이용신청</a></li>
+                    <li><a href="javascript:void(0)" menuid="FT_01_03" onclick="ServicePortalMenu.onclick(this)">이용 내역</a></li>
+                    <li><a href="javascript:void(0)" menuid="FT_01_05" onclick="ServicePortalMenu.onclick(this)">MaRoo 조회</a></li>
+                    <li class="last"><a href="javascript:void(0)" menuid="FT_01_06" onclick="ServicePortalMenu.onclick(this)">MaRoo 신청</a></li>
+                </ul>
+            </li>
+            <li id="menu4">
+                <a href="javascript:void(0)" menuid="CF_01" onclick="ServicePortalMenu.onclick(this)">Picnic</a>
+                <ul class="sub-box" style="display: none;">
+                    <li><a href="javascript:void(0)" menuid="CF_01_05" onclick="ServicePortalMenu.onclick(this)">식당 안내</a></li>
+                    <li><a href="javascript:void(0)" menuid="CF_01_01" onclick="ServicePortalMenu.onclick(this)">오늘의 식단</a></li>
+                    <li><a href="javascript:void(0)" menuid="CF_01_02" onclick="ServicePortalMenu.onclick(this)">주간 식단</a></li>
+                    <li><a href="javascript:void(0)" menuid="CF_01_03" onclick="ServicePortalMenu.onclick(this)">식당 이용내역</a></li>
+                    <li class="last"><a href="javascript:void(0)" menuid="CF_01_04" onclick="ServicePortalMenu.onclick(this)">VIP식당 예약</a></li>
+                </ul>
+            </li>
+            <li id="menu5">
+                <a href="javascript:void(0)" menuid="DS_01" onclick="ServicePortalMenu.onclick(this)">문서수발</a>
+                <ul class="sub-box" style="display: none;">
+                    <li><a href="javascript:void(0)" menuid="DS_01_01" onclick="ServicePortalMenu.onclick(this)">서비스안내</a></li>
+                    <li><a href="javascript:void(0)" menuid="DS_01_02" onclick="ServicePortalMenu.onclick(this)">이용요청</a></li>
+                    <li class="last"><a href="javascript:void(0)" menuid="DS_01_03" onclick="ServicePortalMenu.onclick(this)">발송조회</a></li>
+                    <!-- 출입관리 고려하여 일단 무조건 숨김. 11-18
+                    <li class="last"><a href="javascript:///">사송요청조회</a>
+                        <ul>
+                            <li><a href="javascript:void(0)" menuid="DS_01_10_01_01" onclick="ServicePortalMenu.onclick(this)">수신조회</a></li>
+                            <li><a href="javascript:void(0)" menuid="DS_01_10_01_02" onclick="ServicePortalMenu.onclick(this)">발송조회</a></li>
+                        </ul>
+                    </li>
+                    <li class="last"><a href="javascript:void(0)" menuid="DS_01_10_02" onclick="ServicePortalMenu.onclick(this)">사외 등기/택배</a></li>
+                    <li class="last"><a href="javascript:void(0)" menuid="DS_01_10_03" onclick="ServicePortalMenu.onclick(this)">익일 법원/등기</a></li>
+                    <li class="last"><a href="javascript:void(0)" menuid="DS_01_10_04" onclick="ServicePortalMenu.onclick(this)">행낭 요청 현황</a></li>
+                    <li class="last"><a href="javascript:void(0)" menuid="DS_01_10_05" onclick="ServicePortalMenu.onclick(this)">행낭 처리 현황</a></li>
+                    <li class="last"><a href="javascript:void(0)" menuid="DS_01_10_06" onclick="ServicePortalMenu.onclick(this)">퀵,택배 처리현황</a></li>
+                    <li class="last"><a href="javascript:void(0)" menuid="DS_01_10_07" onclick="ServicePortalMenu.onclick(this)">송부증 출력</a></li>
+                    <li class="last"><a href="javascript:void(0)" menuid="DS_01_10_08" onclick="ServicePortalMenu.onclick(this)">오배달처리</a></li>
+                        -->
+                </ul>
+            </li>
+            <li id="menu6">
+                <a href="javascript:void(0)" menuid="ETC_01" onclick="ServicePortalMenu.onclick(this)">기타 지원서비스</a>
+                <ul class="sub-box" style="display: none;">
+                    <li><a href="javascript:void(0)" menuid="ETC_01_18" onclick="ServicePortalMenu.onclick(this)">One Stop 서비스</a></li>
+                   <!--li><a href="javascript:void(0)" menuid="ETC_01_01" onclick="ServicePortalMenu.onclick(this)">신사옥안내</a></li-->
+                    <li><a href="javascript:void(0)" menuid="ETC_01_14" onclick="ServicePortalMenu.onclick(this)">통근버스</a></li>
+                    <li><a href="javascript:void(0)" menuid="PA_01_02" onclick="ServicePortalMenu.onclick(this)">주차권신청</a>
+                        <ul>
+                            
+                            <li class="mitem"><a href="javascript:void(0)" menuid="PA_01_02" onclick="ServicePortalMenu.onclick(this)">방문차량등록</a></li>
+                            <li class="mitem"><a href="javascript:void(0)" menuid="PA_01_03" onclick="ServicePortalMenu.onclick(this)">종일주차신청<span class="ico_parking"></span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0)" menuid="ETC_01_04" onclick="ServicePortalMenu.onclick(this)">업무용차량예약</a></li>
+                    <li><a href="javascript:void(0)" menuid="ETC_01_11" onclick="ServicePortalMenu.onclick(this)">명함신청</a></li>
+                    <li><a href="javascript:void(0)" menuid="ETC_01_05" onclick="ServicePortalMenu.onclick(this)">Refresh Center</a>
+                        <ul>
+                            <li><a href="javascript:void(0)" menuid="ETC_01_05_01" onclick="ServicePortalMenu.onclick(this)">예약</a></li>
+                            <li><a href="javascript:void(0)" menuid="ETC_01_05_02" onclick="ServicePortalMenu.onclick(this)">예약현황</a></li>
+                        </ul>
+                    </li>
+                    
+                     
+                                        
+                    
+                    
+
+                    
+                    <li><a href="javascript:void(0)" menuid="ETC_01_10" onclick="ServicePortalMenu.onclick(this)">Planet Kids</a></li>
+                    <li><a href="javascript:void(0)" menuid="ETC_01_13" onclick="ServicePortalMenu.onclick(this)">조명관리</a></li>
+                    
+                    <li><a href="javascript:void(0)" menuid="ETC_01_17" onclick="ServicePortalMenu.onclick(this)">냉난방 신청</a>
+                        <ul>
+                            <li><a href="javascript:void(0)" menuid="ETC_01_17_02" onclick="ServicePortalMenu.onclick(this)">이용요청</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0)" menuid="ETC_01_19" onclick="ServicePortalMenu.onclick(this)">CTO Shared Service</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- gnb 메뉴 종료 -->
+
+            </div>
+        </header>
+        <!-- //header 종료 -->
+
+        <!-- content 시작 -->
+        <div id="content">
+            <div id="history_warp">
+                <div class="cate-step">
+                    <a href="#" class="home"><span>home</span></a> &gt;
+                </div>
+            </div>
+            <!-- container 시작 -->
+            <div id="container">
+                <!-- lnb 시작 -->
+                <nav class="sub-nav">
+                    <!-- left side -->
+                    
+    
+    <h2 class="menu04"><span>Picnic</span></h2>
+    <ul>
+        <li class="mitem"><a href="javascript:void(0)" menuid="CF_01_05" onclick="ServicePortalMenu.onclick(this)">식당 안내</a></li>
+        <li class="mitem"><a href="javascript:void(0)" menuid="CF_01_01" onclick="ServicePortalMenu.onclick(this)">오늘의 식단</a></li>
+        <li class="mitem"><a href="javascript:void(0)" menuid="CF_01_02" onclick="ServicePortalMenu.onclick(this)">주간 메뉴</a></li>
+        <li class="mitem"><a href="javascript:void(0)" menuid="CF_01_03" onclick="ServicePortalMenu.onclick(this)">식당 이용내역</a></li>
+        <li class="mitem"><a href="javascript:void(0)" menuid="CF_01_04" onclick="ServicePortalMenu.onclick(this)">VIP식당 예약</a></li>
+
+    
+    </ul>  
+
+                </nav>
+                <!--// lnb 종료 -->
+
+                <!-- cont_area 시작 -->
+                <div id="cont_area">
+                    <!-- contents -->
+                    
+    <h3>
+        <span>주간 메뉴</span>
+    </h3>
+
+    <div class="week_menu_warp">
+        <div class="week_view">
+            <a href="javascript:dateChange('back');">
+                <img src="../../Common/images/sub/sp_b_prev.gif" /></a>
+            <span id="MonthWeek" class="month"></span>
+            <a href="javascript:dateChange('next');">
+                <img src="../../Common/images/sub/sp_b_next.gif" /></a>
+        </div>
+
+        <div class="menu_warp">
+            <div class="weektable">
+                <div class="first"><em>요일</em></div>
+                <div><em class="day"></em></div>
+                <div><em class="day"></em></div>
+                <div><em class="day"></em></div>
+                <div><em class="day"></em></div>
+                <div><em class="day"></em></div>
+                <div><em class="day"></em></div>
+            </div>
+            <div class="w_menu_list">
+                <!-- class 설명
+                            1. <th>
+                                조식 : breakfast
+                                중식 a : lunch type1
+                                중식 b : lunch type2
+                                석식 : dinner
+                            2. <td>
+                                오늘인 경우 : today
+                                메뉴가 없는 경우 : none
+                            -->
+                <table style="width: 100%" border="1">
+                    <colgroup>
+                        <col style="width: 85px;" />
+                        <col style="width: 113px;" />
+                        <col style="width: 113px;" />
+                        <col style="width: 113px;" />
+                        <col style="width: 113px;" />
+                        <col style="width: 113px;" />
+                        <col style="width: 113px;" />
+                    </colgroup>
+                    <tbody id="menuBody">
+                        <!-- 조식 -->
+                        <tr class="menuLine1">
+                            <th class="breakfast">
+                                <span>조식<em></em></span>
+                            </th>
+                            <td class="none">
+                                <!-- 월 -->
+                            </td>
+                            <td class="none">
+                                <!-- 화 -->
+                            </td>
+                            <td class="none">
+                                <!-- 수 -->
+                            </td>
+                            <td class="none">
+                                <!-- 목 -->
+                            </td>
+                            <td class="none">
+                                <!-- 금 -->
+                            </td>
+                            <td class="saturday">휴일</td>
+                        </tr>
+
+                        <tr class="menuLine1">
+                            <th class="breakfast">
+                                <span>조식<em></em></span>
+                            </th>
+                            <td class="none">
+                                <!-- 월 -->
+                            </td>
+                            <td class="none">
+                                <!-- 화 -->
+                            </td>
+                            <td class="none">
+                                <!-- 수 -->
+                            </td>
+                            <td class="none">
+                                <!-- 목 -->
+                            </td>
+                            <td class="none">
+                                <!-- 금 -->
+                            </td>
+                            <td class="saturday">휴일</td>
+                        </tr>
+
+                        <tr class="menuLine1">
+                            <th class="breakfast">
+                                <span>조식<em></em></span>
+                            </th>
+                            <td class="none">
+                                <!-- 월 -->
+                            </td>
+                            <td class="none">
+                                <!-- 화 -->
+                            </td>
+                            <td class="none">
+                                <!-- 수 -->
+                            </td>
+                            <td class="none">
+                                <!-- 목 -->
+                            </td>
+                            <td class="none">
+                                <!-- 금 -->
+                            </td>
+                            <td class="saturday">휴일</td>
+                        </tr>
+
+                        <tr class="menuLine1">
+                            <th class="breakfast">
+                                <span>조식<em></em></span>
+                            </th>
+                            <td class="none">
+                                <!-- 월 -->
+                            </td>
+                            <td class="none">
+                                <!-- 화 -->
+                            </td>
+                            <td class="none">
+                                <!-- 수 -->
+                            </td>
+                            <td class="none">
+                                <!-- 목 -->
+                            </td>
+                            <td class="none">
+                                <!-- 금 -->
+                            </td>
+                            <td class="saturday">휴일</td>
+                        </tr>
+
+                        <tr class="menuLine1">
+                            <th class="breakfast">
+                                <span>조식<em></em></span>
+                            </th>
+                            <td class="none">
+                                <!-- 월 -->
+                            </td>
+                            <td class="none">
+                                <!-- 화 -->
+                            </td>
+                            <td class="none">
+                                <!-- 수 -->
+                            </td>
+                            <td class="none">
+                                <!-- 목 -->
+                            </td>
+                            <td class="none">
+                                <!-- 금 -->
+                            </td>
+                            <td class="saturday">휴일</td>
+                        </tr>
+
+                        <!-- 중식A -->
+                        <tr class="menuLine2">
+                            <th class="lunch type1">
+                                <span>중식<em></em></span>
+                            </th>
+                            <td class="none">
+                                <!-- 월 -->
+                            </td>
+                            <td class="none">
+                                <!-- 화 -->
+                            </td>
+                            <td class="none">
+                                <!-- 수 -->
+                            </td>
+                            <td class="none">
+                                <!-- 목 -->
+                            </td>
+                            <td class="none">
+                                <!-- 금 -->
+                            </td>
+                            <td class="saturday">휴일</td>
+                        </tr>
+
+                        <!-- 중식B -->
+                        <tr class="menuLine2">
+                            <th class="lunch type2">
+                                <span>중식<em></em></span>
+                            </th>
+                            <td class="none">
+                                <!-- 월 -->
+                            </td>
+                            <td class="none">
+                                <!-- 화 -->
+                            </td>
+                            <td class="none">
+                                <!-- 수 -->
+                            </td>
+                            <td class="none">
+                                <!-- 목 -->
+                            </td>
+                            <td class="none">
+                                <!-- 금 -->
+                            </td>
+                            <td class="saturday">휴일</td>
+                        </tr>
+
+                        <tr class="menuLine2">
+                            <th class="lunch type1">
+                                <span>중식<em></em></span>
+                            </th>
+                            <td class="none">
+                                <!-- 월 -->
+                            </td>
+                            <td class="none">
+                                <!-- 화 -->
+                            </td>
+                            <td class="none">
+                                <!-- 수 -->
+                            </td>
+                            <td class="none">
+                                <!-- 목 -->
+                            </td>
+                            <td class="none">
+                                <!-- 금 -->
+                            </td>
+                            <td class="saturday">휴일</td>
+                        </tr>
+
+                        <tr class="menuLine2">
+                            <th class="lunch type2">
+                                <span>중식<em></em></span>
+                            </th>
+                            <td class="none">
+                                <!-- 월 -->
+                            </td>
+                            <td class="none">
+                                <!-- 화 -->
+                            </td>
+                            <td class="none">
+                                <!-- 수 -->
+                            </td>
+                            <td class="none">
+                                <!-- 목 -->
+                            </td>
+                            <td class="none">
+                                <!-- 금 -->
+                            </td>
+                            <td class="saturday">휴일</td>
+                        </tr>
+
+                        <tr class="menuLine2">
+                            <th class="lunch type1">
+                                <span>중식<em></em></span>
+                            </th>
+                            <td class="none">
+                                <!-- 월 -->
+                            </td>
+                            <td class="none">
+                                <!-- 화 -->
+                            </td>
+                            <td class="none">
+                                <!-- 수 -->
+                            </td>
+                            <td class="none">
+                                <!-- 목 -->
+                            </td>
+                            <td class="none">
+                                <!-- 금 -->
+                            </td>
+                            <td class="saturday">휴일</td>
+                        </tr>
+
+                        <!-- 석식 -->
+                        <tr class="menuLine3">
+                            <th class="dinner">
+                                <span>석식<em></em></span>
+                            </th>
+                            <td class="none">
+                                <!-- 월 -->
+                            </td>
+                            <td class="none">
+                                <!-- 화 -->
+                            </td>
+                            <td class="none">
+                                <!-- 수 -->
+                            </td>
+                            <td class="none">
+                                <!-- 목 -->
+                            </td>
+                            <td class="none">
+                                <!-- 금 -->
+                            </td>
+                            <td class="saturday">휴일</td>
+                        </tr>
+
+                        <tr class="menuLine3">
+                            <th class="dinner">
+                                <span>석식<em></em></span>
+                            </th>
+                            <td class="none">
+                                <!-- 월 -->
+                            </td>
+                            <td class="none">
+                                <!-- 화 -->
+                            </td>
+                            <td class="none">
+                                <!-- 수 -->
+                            </td>
+                            <td class="none">
+                                <!-- 목 -->
+                            </td>
+                            <td class="none">
+                                <!-- 금 -->
+                            </td>
+                            <td class="saturday">휴일</td>
+                        </tr>
+
+                        <tr class="menuLine3">
+                            <th class="dinner">
+                                <span>석식<em></em></span>
+                            </th>
+                            <td class="none">
+                                <!-- 월 -->
+                            </td>
+                            <td class="none">
+                                <!-- 화 -->
+                            </td>
+                            <td class="none">
+                                <!-- 수 -->
+                            </td>
+                            <td class="none">
+                                <!-- 목 -->
+                            </td>
+                            <td class="none">
+                                <!-- 금 -->
+                            </td>
+                            <td class="saturday">휴일</td>
+                        </tr>
+
+                        <tr class="menuLine3">
+                            <th class="dinner">
+                                <span>석식<em></em></span>
+                            </th>
+                            <td class="none">
+                                <!-- 월 -->
+                            </td>
+                            <td class="none">
+                                <!-- 화 -->
+                            </td>
+                            <td class="none">
+                                <!-- 수 -->
+                            </td>
+                            <td class="none">
+                                <!-- 목 -->
+                            </td>
+                            <td class="none">
+                                <!-- 금 -->
+                            </td>
+                            <td class="saturday">휴일</td>
+                        </tr>
+
+                        <tr class="menuLine3">
+                            <th class="dinner">
+                                <span>석식<em></em></span>
+                            </th>
+                            <td class="none">
+                                <!-- 월 -->
+                            </td>
+                            <td class="none">
+                                <!-- 화 -->
+                            </td>
+                            <td class="none">
+                                <!-- 수 -->
+                            </td>
+                            <td class="none">
+                                <!-- 목 -->
+                            </td>
+                            <td class="none">
+                                <!-- 금 -->
+                            </td>
+                            <td class="saturday">휴일</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+                </div>
+                <!--// cont_area 종료 -->
+            </div>
+            <!--// container 종료 -->
+        </div>
+        <!-- content 종료 -->
+
+        <!-- footer 시작 -->
+        <footer id="footer">
+            <div class="footerWarp">
+                <h1 class="flogo"><a target="_self" href="javascript:///;">
+                    <img src="/common/images/f_logo.gif" /></a></h1>
+                <ul>
+                    <li class="first"><a href="javascript:///;">개인정보취급방침</a></li>
+                    <li><a href="javascript:///;">이용약관</a></li>
+                    <li><a href="javascript:///;">오시는길</a></li>
+                    <li><a href="javascript:///;">문의하기</a></li>
+                </ul>
+                <p class="copyright">
+                    <img src="/common/images/copyright.gif" /></p>
+
+            </div>
+        </footer>
+        <!-- footer 종료 -->
+    </form>
+</body>
+</html>
