@@ -141,6 +141,6 @@ dumpItem <- function() {
   
   r <- POST(DATASTORE_QUERY, body = body,
             config(token = token), c(content_type_json()))
-  
+
   content(r)$batch$entityResults
 }
