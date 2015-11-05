@@ -43,5 +43,5 @@ menu <- pnetParser$getMenu(sunday)
 newitem <- metadata$updateMenu(menu, daum)
 
 # 구글 서버에 업로드
-dataStore$uploadMenu(menu)
-dataStore$uploadItem(newitem)
+dataStore$upsertMenu(menu)
+dataStore$upsertItem(newitem)

@@ -1,0 +1,32 @@
+DataStore <-> SQLite 동기화 스크립트 모음
+=========================================
+
+# 개요
+- Datastore와 SQLite를 동기화하는 각종 스크립트 모음
+- 직접 실행할 수 없으며, 필요에 따라 코드 일부분만 실행
+
+# 라이브러리 및 초기데이터 로딩
+```{r}
+library(dplyr)
+library(magrittr)
+library(stringr)
+library(futile.logger)
+
+source('env.R')
+
+metadata <- loadLib('lib/metadata.R')
+dataStore <- loadLib('lib/googleDataStore.R')
+
+menu.orig <- metadata$getAllMenu()
+item.orig <- metadata$getAllItem() %>% arrange(title)
+```
+
+# 메뉴이름 정리
+- 메뉴명 오타교정 및 중복메뉴 병합하여 DataStore에 업로드
+```{r}
+item <- item.orig %>% rename(title.orig = title) %>% 
+  mutate(title = metadata$cleanseTitle(title.orig))
+
+item %>% filter(title != title.orig) %>% View
+item %>% filter(str_length(image) == 0) %>% View
+```

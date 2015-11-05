@@ -28,8 +28,8 @@ TAG <- 'googleDataStore'
 token <- .auth()
 
 # 메뉴아이템(갈비탕, 육개장...) 데이터를 DataStore에 저장
-uploadItem <- function(item) {
-  flog.info('%s$uploadItem() started.', TAG)
+upsertItem <- function(item) {
+  flog.info('%s$upsertItem() started.', TAG)
   if (NROW(item) == 0) {
     flog.info("No new item exists", stderr())
     return()
@@ -48,11 +48,31 @@ uploadItem <- function(item) {
   ntx <- 25
   Map(.commit, split(upsert, cut(1:n, seq(from = 1, to = n + ntx, by = ntx), right = F)))
   
-  flog.info('%s$uploadItem() finished.', TAG)
+  flog.info('%s$upsertItem() finished.', TAG)
+}
+
+# 메뉴아이템 데이터를 DataStore에서 삭제
+deleteItem <- function(item) {
+  flog.info('%s$deleteItem() started.', TAG)
+  if (NROW(item) == 0) {
+    flog.info("No item for delete", stderr())
+    return()
+  }
+  
+  delete <- item %>% rowwise %>% transmute(
+    path = list(data.frame(kind = 'Item', name = title))
+  )
+  
+  # 트랜잭션 제한을 피하기 위해 25개 단위로 끊어서 저장
+  n <- NROW(delete)
+  ntx <- 25
+  Map(.commit, delete = split(delete, cut(1:n, seq(from = 1, to = n + ntx, by = ntx), right = F)))
+  
+  flog.info('%s$deleteItem() finished.', TAG)
 }
 
 # 일간메뉴 데이터 저장
-uploadMenu <- function(menu) {
+upsertMenu <- function(menu) {
   flog.info('%s$uploadMenu() started.', TAG)
   
   upsert <- menu %>% rowwise %>% transmute(
@@ -112,13 +132,14 @@ dumpItem <- function() {
 }
 
 # transaction commit
-.commit <- function(upsert) {
+.commit <- function(upsert = NULL, delete = NULL) {
   tx <- .beginTransaction()
   
   body <- list(
     transaction = unbox(tx),
     mutation = list(
-      upsert = upsert
+      upsert = upsert,
+      delete = delete
     )
   ) %>% toJSON
   

@@ -10,6 +10,19 @@ DDL_FILE <- 'db/menu_ddl.sql'
 
 TAG <- 'metadata'
 
+# 메뉴명에서 발견된 오타 교정
+ERRATA <- c(
+  '그랜샐러드'='그린샐러드', '꺳'='깻', '꺠'='깨', '깍뚜기'='깍두기', 
+  '돈가스'='돈까스', '둥글레'='둥굴레', '다미사'='다시마', '떙'='땡', 
+  '마늘쫑'='마늘종', '만둣'='만두', '메쉬드'='매쉬드', '매쉬([!드])'='매쉬드\\1',
+  '메실'='매실', '메콤'='매콤', '무료동'='무교동', 
+  '복음'='볶음', '부치'='부추',
+  '소세지'='소시지', '스크램블([!드])'='스크램블드\\1', '쌈짱'='쌈장', 
+  '어욱'='어묵', '엣날'='옛날', '우뷰'='유부', 
+  '케찹'='케첩', '코올슬로'='코울슬로',
+  'D$'='드레싱', 'S$'='소스'
+)
+
 # DB 스키마 초기화
 init <- function() {
   tryCatch({
@@ -77,7 +90,29 @@ updateImage <- function() {
 }
 
 # 전체 메뉴아이템 리스트 반환
-getItem <- function() {
+getAllItem <- function() {
   db <- src_sqlite(DB_MENU)
   tbl(db, 'item') %>% collect %T>% { Encoding(.$title) <- 'UTF-8' }
+}
+
+# 전체 메뉴 리스트 반환
+getAllMenu <- function() {
+  db <- src_sqlite(DB_MENU)
+  tbl(db, 'menu') %>% collect %T>% { 
+    Encoding(.$title) <- 'UTF-8'
+    Encoding(.$origin) <- 'UTF-8'
+  }
+}
+
+# 메뉴명 클렌징
+# - 괄호수식어 제거: '(양은)김치찌개' => '김치찌개'
+# - 스페이스/특수문자 제거: '계란후라이 ' => '계란후라이'
+# - 맨 마지막의 특수문자 제거: '커피*' => '커피'
+# - 오타/네이밍 교정: '우뷰우동' => '유부우동'
+cleanseTitle <- function(title) {
+  title %>% 
+    str_replace('^\\(.*\\)', '') %>% 
+    str_replace('[ `!?]', '') %>% 
+    str_replace('[&*]$', '') %>% 
+    str_replace_all(ERRATA)
 }
