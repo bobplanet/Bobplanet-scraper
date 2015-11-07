@@ -16,17 +16,20 @@ source('env.R')
 
 metadata <- loadLib('lib/metadata.R')
 dataStore <- loadLib('lib/googleDataStore.R')
+nameCleanser <- loadLib('lib/nameCleanser.R')
 
 menu.orig <- metadata$getAllMenu()
-item.orig <- metadata$getAllItem() %>% arrange(title)
+item.orig <- metadata$getAllItem() %>% arrange(name)
 ```
 
 # 메뉴이름 정리
 - 메뉴명 오타교정 및 중복메뉴 병합하여 DataStore에 업로드
 ```{r}
-item <- item.orig %>% rename(title.orig = title) %>% 
-  mutate(title = metadata$cleanseTitle(title.orig))
+item <- item.orig %>% rename(name.orig = name) %>% 
+  mutate(name = nameCleanser$cleanseName(name.orig))
 
-item %>% filter(title != title.orig) %>% View
+# 메뉴명 변경된 old 아이템/메뉴 삭제 및 갱신
+
+item %>% filter(name != name.orig) %>% View
 item %>% filter(str_length(image) == 0) %>% View
 ```

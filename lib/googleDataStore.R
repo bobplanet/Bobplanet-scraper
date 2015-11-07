@@ -36,7 +36,7 @@ upsertItem <- function(item) {
   }
   
   upsert <- item %>% rowwise %>% transmute(
-    key = list(list(path = list(kind = 'Item', name = title) %>% data.frame)),
+    key = list(list(path = list(kind = 'Item', name = name) %>% data.frame)),
     properties = list(list(
       image = list(stringValue = unbox(image), indexed = unbox(F)),
       thumbnail = list(stringValue = unbox(thumbnail), indexed = unbox(F))
@@ -60,7 +60,7 @@ deleteItem <- function(item) {
   }
   
   delete <- item %>% rowwise %>% transmute(
-    path = list(data.frame(kind = 'Item', name = title))
+    path = list(data.frame(kind = 'Item', name = name))
   )
   
   # 트랜잭션 제한을 피하기 위해 25개 단위로 끊어서 저장
@@ -76,12 +76,12 @@ upsertMenu <- function(menu) {
   flog.info('%s$uploadMenu() started.', TAG)
   
   upsert <- menu %>% rowwise %>% transmute(
-    key = list(list(path = list(kind = 'Menu', id = ID) %>% data.frame)),
+    key = list(list(path = list(kind = 'Menu', id = id) %>% data.frame)),
     properties = list(list(
       date = list(stringValue = unbox(date)),
       when = list(stringValue = unbox(when)),
       type = list(stringValue = unbox(type), indexed = unbox(F)),
-      item = list(keyValue = list(path = list(kind = 'Item', name = title) %>% data.frame)),
+      item = list(keyValue = list(path = list(kind = 'Item', name = name) %>% data.frame)),
       origin = list(stringValue = unbox(origin), indexed = unbox(F)),
       calories = list(integerValue = unbox(calories), indexed = unbox(F))
       ))
@@ -93,7 +93,7 @@ upsertMenu <- function(menu) {
           entityValue = list(list(
             properties = list(
               item = list(
-                keyValue = list(path = list(kind = 'Item', name = title) %>% data.frame)
+                keyValue = list(path = list(kind = 'Item', name = name) %>% data.frame)
               ),
               origin = list(stringValue = unbox(origin))
             )
