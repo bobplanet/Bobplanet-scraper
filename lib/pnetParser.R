@@ -39,7 +39,7 @@ getMenu <- function(sunday, nameCleanser) {
 }
 
 # JSON에서 읽어낸 데이터를 human readable한 dataframe으로 변환
-.toDataFrame <- function(menu.raw, nameCleanser) {
+.toDataFrame <- function(menu.raw, namer) {
   whenTable <- c('아침', '점심', '저녁')
 
   menu <- menu.raw %>% 
@@ -48,7 +48,7 @@ getMenu <- function(sunday, nameCleanser) {
       date = (CfMenu_Date / 1000) %>% as.POSIXct(origin='1970-01-01') %>% strftime('%Y-%m-%d'),
       when = whenTable[as.integer(CfMeal_Gubun)],
       type = CfMenu_Name,
-      name = CfMenu_Food %>% str_trim %>% namer$cleanse(),
+      name = CfMenu_Food %>% str_trim %>% namer$forSearch(.),
       origin = CfMenu_Origin %>% str_trim,
       submenu = MenuFoodList,
       calories = CfMenu_KCal
@@ -57,7 +57,7 @@ getMenu <- function(sunday, nameCleanser) {
         if (length(x) > 0) {
           names(x) <- c('id', 'name', 'origin', 'menu.id') 
         }
-        x$name <- namer$cleanse(x$name)
+        x$name <- namer$forSearch(x$name)
         x %>% filter(name != '')
       })
     }, .) %>% Reduce(rbind, .) %>% 
