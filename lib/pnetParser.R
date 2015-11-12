@@ -48,7 +48,7 @@ getMenu <- function(sunday, nameCleanser) {
       date = (CfMenu_Date / 1000) %>% as.POSIXct(origin='1970-01-01') %>% strftime('%Y-%m-%d'),
       when = whenTable[as.integer(CfMeal_Gubun)],
       type = CfMenu_Name,
-      name = CfMenu_Food %>% str_trim %>% nameCleanser$cleanseName(),
+      name = CfMenu_Food %>% str_trim %>% namer$cleanse(),
       origin = CfMenu_Origin %>% str_trim,
       submenu = MenuFoodList,
       calories = CfMenu_KCal
@@ -57,7 +57,7 @@ getMenu <- function(sunday, nameCleanser) {
         if (length(x) > 0) {
           names(x) <- c('id', 'name', 'origin', 'menu.id') 
         }
-        x$name <- nameCleanser$cleanseName(x$name)
+        x$name <- namer$cleanse(x$name)
         x %>% filter(name != '')
       })
     }, .) %>% Reduce(rbind, .) %>% 
