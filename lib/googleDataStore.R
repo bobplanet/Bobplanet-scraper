@@ -87,18 +87,20 @@ upsertMenu <- function(menu) {
       ))
   )
   
-  for (i in 1:length(menu$submenu)) {
-    upsert$properties[[i]]$submenu$listValue <- 
-        menu[i, ]$submenu[[1]] %>% rowwise %>% transmute(
-          entityValue = list(list(
-            properties = list(
-              item = list(
-                keyValue = list(path = list(kind = 'Item', name = name) %>% data.frame)
-              ),
-              origin = list(stringValue = unbox(origin))
-            )
-          ))
-        )
+  if (!is.null(menu$submenu)) {
+    for (i in 1:length(menu$submenu)) {
+      upsert$properties[[i]]$submenu$listValue <- 
+          menu[i, ]$submenu[[1]] %>% rowwise %>% transmute(
+            entityValue = list(list(
+              properties = list(
+                item = list(
+                  keyValue = list(path = list(kind = 'Item', name = name) %>% data.frame)
+                ),
+                origin = list(stringValue = unbox(origin))
+              )
+            ))
+          )
+    }
   }
 
   .commit(upsert)

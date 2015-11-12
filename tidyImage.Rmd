@@ -1,0 +1,82 @@
+메뉴 Item의 이미지 썸네일 정리
+=================================
+
+# 개요
+- 이미지를 눈으로 확인해서 골라내기 위해 Google Docs에 데이터를 업로드
+
+# 작업환경 초기화
+```{r}
+library(dplyr)
+library(tidyr)
+library(googlesheets)
+
+SHEET_KEY <- '17BS_HH-P059K1IHzFRj3aKa6T12Cn_hu1aVEHWTJhN8'
+
+source('env.R')
+
+metadata <- loadLib('lib/metadata.R')
+search <- loadLib('lib/daumSearch.R')
+dataStore <- loadLib('lib/googleDataStore.R')
+namer <- loadLib('lib/namer.R')
+
+# 시트 로드
+sheet <- gs_key(SHEET_KEY)
+```
+
+# 데이터 로딩 및 담당자 할당
+- SQLite DB에 저장되어있는 Item 데이터 로딩
+- 특정 조건에 해당하는(가령, 이미지가 없는) Item만 필터
+```{r}
+item <- metadata$getAllItem() %>% arrange(name)
+item <- item %>% filter(str_length(image) == 0)
+```
+
+# 대안이미지 URL 추가 및 Google Docs에 업로드
+- 이미지검색결과 URL을 10개 추출하여 데이터에 추가
+```{r}
+urls <- Map(function(name) { 
+  search$imageSearch(name, 10)
+  }, namer$forSearch(item$name))
+
+item$thumbnails <- sapply(urls, function(url) { paste0(url$thumbnail, collapse = '|') })
+
+item.upload <- item %>% separate(thumbnails, into = paste0('thumbnail', c(1:10)), sep = '\\|') %>% 
+  mutate_each(funs(paste0('=IMAGE("', ., '", 3)')), contains('thumbnail'))
+
+# 첫번째 worksheet에 데이터 부어넣기
+gs_edit_cells(sheet, ws = 1, input = item.upload)
+```
+
+# Google Docs에서 데이터 가져와서 DataStore에 업로드
+- 먼저 Google Docs에서 이미지 셀렉션 작업 수행
+- 찾기&바꾸기 이용해서 IMAGE 함수 제거 (손으로 해줘야 함)
+
+```{r}
+item.download <- sheet %>% gs_read(ws = 1)
+
+item.tidy <- item.download %>% 
+  mutate_each(funs(ifelse(is.na(.), '', .)), contains('thumbnail')) %>% 
+  select(-thumbnail) %>% unite(thumbnail, contains('thumbnail'), sep = '') %T>% 
+  { Encoding(.$name) <- 'UTF-8' } 
+
+item.final <- Map(function(i) {
+  name <- item.tidy$name[i]
+  image <- urls[[name]]$image
+  thumbnail <- urls[[name]]$thumbnail
+  index <- which(thumbnail == item.tidy$thumbnail[i])
+  c(name = item.tidy$name[i], 
+       image = image[index], 
+       thumbnail = thumbnail[index])
+}, 1:NROW(item.tidy)
+) %>% Reduce(rbind, .) %>% data.frame %>% 
+  group_by(name) %>% summarise_each(funs(max), image:thumbnail) %>% 
+  mutate_each(funs(ifelse(str_detect(., 'http'), ., '')), image:thumbnail)
+
+```
+
+# 정리된 데이터 SQLite 및 DataStore에 저장
+```{r}
+dataStore$upsertItem(item.final)
+metadata$upsertItem(item.final)
+```
+

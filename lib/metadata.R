@@ -82,6 +82,12 @@ getAllItem <- function() {
   tbl(db, 'Item') %>% collect %T>% { Encoding(.$name) <- 'UTF-8' }
 }
 
+# 메뉴아이템 추가
+upsertItem <- function(item) {
+  db <- src_sqlite(DB_MENU)
+  .upsert(item %>% select(name, image, thumbnail), 'Item', db)  
+}
+
 # 전체 메뉴아이템 삭제
 deleteAllItem <- function() {
   db <- src_sqlite(DB_MENU)
@@ -95,4 +101,16 @@ getAllMenu <- function() {
     Encoding(.$name) <- 'UTF-8'
     Encoding(.$origin) <- 'UTF-8'
   }
+}
+
+# 메뉴 리스트 삽입
+insertMenu <- function(menu) {
+  db <- src_sqlite(DB_MENU)
+  .upsert(menu %>% select(id, date, when, type, name, origin, calories), 'Menu', db)
+}
+
+# 전체 메뉴 삭제
+deleteAllMenu <- function() {
+  db <- src_sqlite(DB_MENU)
+  dbSendQuery(db$con, 'DELETE FROM Menu')
 }
