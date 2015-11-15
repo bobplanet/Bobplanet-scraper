@@ -108,6 +108,31 @@ upsertMenu <- function(menu) {
   flog.info('%s$uploadMenu() finished.', TAG)
 }
 
+# 메뉴아이템(갈비탕, 육개장...) 데이터를 DataStore에 저장
+upsertItemStat <- function(item) {
+  flog.info('%s$upsertItemStat() started.', TAG)
+  if (NROW(item) == 0) {
+    flog.info("No new stat exists", stderr())
+    return()
+  }
+  
+  upsert <- item %>% rowwise %>% transmute(
+    key = list(list(path = list(kind = 'ItemStat', name = name) %>% data.frame)),
+    properties = list(list(
+      cnt_day30 = list(integerValue = unbox(cnt_day30), indexed = unbox(F)),
+      cnt_day90 = list(integerValue = unbox(cnt_day90), indexed = unbox(F)),
+      cnt_day180 = list(integerValue = unbox(cnt_day180), indexed = unbox(F))
+    ))
+  )
+
+  # 트랜잭션 제한을 피하기 위해 25개 단위로 끊어서 저장
+  n <- NROW(upsert)
+  ntx <- 25
+  Map(.commit, split(upsert, cut(1:n, seq(from = 1, to = n + ntx, by = ntx), right = F)))
+  
+  flog.info('%s$upsertItemStat() finished.', TAG)
+}
+
 # DataStore에서 메뉴아이템 데이터를 받아 data.frame으로 변환
 dumpItem <- function() {
   item <- .dumpKind('Item')
