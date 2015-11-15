@@ -103,6 +103,15 @@ getAllMenu <- function() {
   }
 }
 
+# 전체 메뉴 리스트 반환
+getAllSubmenu <- function() {
+  db <- src_sqlite(DB_MENU)
+  tbl(db, 'Submenu') %>% collect %T>% { 
+    Encoding(.$name) <- 'UTF-8'
+    Encoding(.$origin) <- 'UTF-8'
+  }
+}
+
 # 메뉴 리스트 삽입
 insertMenu <- function(menu) {
   db <- src_sqlite(DB_MENU)
